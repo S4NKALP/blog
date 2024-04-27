@@ -1,0 +1,13 @@
+<footer class="footer">
+    <!-- Option for user to inject custom html -->
+    {{ if .Site.Params.CustomFooterHTML }}
+    {{ .Site.Params.CustomFooterHTML | safeHTML }}
+    {{ end }}
+
+    {{ if .Site.Params.footer }}
+    <span>&copy; {{ now.Year }} {{ .Site.Params.Footer}}</span>
+    {{ end }}
+    <span>
+        <p>©2024 S4NKALP</p>
+    </span>
+</footer>
