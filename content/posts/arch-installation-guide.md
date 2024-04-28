@@ -15,7 +15,7 @@ In addition to the standard procedures, this guide adds different commands and s
 
 We have to clarify that this guide will focus on the basic installation of Arch. If you want to use a graphical environment, you can consult the rest of our guides:
 
-
+- [Hyprland](/posts/hyprland-arch-installation-guide/)
 
 Also you can check out the official Arch Wiki, which provides comprehensive guides for installing various [desktop environments](https://wiki.archlinux.org/title/Desktop_environment).
 
