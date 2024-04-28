@@ -15,6 +15,8 @@ Like many other dynamic tiling windows managers, Hyprland is extremly customizab
  - Here are some [examples](https://hyprland.org/hall_of_fame/)
  - Please check out also the [Hyprland Wiki](https://wiki.hyprland.org/)
 
+*- **Note**: To follow this guide, we assume that you already have Arch Linux installed. If you have not installed it yet, you can refer to the [Arch Linux Installation Guide](/posts/arch-installation-guide).*
+
 # 1) Installing paru (Aur helper)
 Aur Helper is a tool which help you download apps and binaries stored and uploaded in Arch User Repository thus, giving you access to a large in no packages which are not available in official pacman repo’s
 
