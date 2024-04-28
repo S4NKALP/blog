@@ -25,6 +25,7 @@ To install these packages, open a terminal and run the following command:
     $ pacman -S --needed base-devel
     $ git clone https://aur.archlinux.org/paru.git
     $ cd paru
+## Introduction
     $ makepkg -si
 
 # 2) Installing Hyprland With My scripts
@@ -33,14 +34,66 @@ To install these packages, open a terminal and run the following command:
     $ chmod +x Installer.sh
     $ ./Installer.sh
 
-After that press y as shown in pictures below
+After that press y as shown below
 
-![installer](/images/installer.png)
+
+```
+_____  _  _      ____   _  __ __  __
+|__  / | || |    / ___| | |/ / \ \/ /
+  / /  | || |_  | |     | ' /   \  /
+ / /_  |__   _| | |___  | . \   /  \
+/____|    |_|    \____| |_|\_\ /_/\_\  S4NKALP
+
+
+This script will check if you have the necessary dependencies, and if not, it will install them. Then, it will clone the RICE in your HOME directory.
+After that, it will create a secure backup of your files, and then copy the new files to your computer.
+You will be prompted for your root password to install missing dependencies and/or to switch to zsh shell if its not your default.It will generate log file.
+
+This script doesnt have the potential power to break your system, it only copies files from my repository to your HOME directory.
+
+ Do you wish to continue? [y/N]: y
+
+
+```
 
 Then the script do its rest of work.
+``````
+[~/dotfiles] $ tree
 
-![structure](/images/structure.png)
+hypr
+├── assets
+│   ├── bak.rofi.png
+│   ├── bell.png
+│   ├── reload.svg
+│   └── rofi.png
+├── configs
+│   ├── emojis
+│   ├── Keybinds.conf
+│   └── Settings.conf
+├── hypridle.conf
+├── hyprland.conf
+├── hyprlock.conf
+├── initial-boot.sh
+├── scripts
+│   ├── Device_cmd.sh
+│   ├── Music_cmd.sh
+│   ├── Ref.sh
+│   ├── Rofi_cmd.sh
+│   ├── RunCMD.sh
+│   ├── System_cmd.sh
+│   ├── Ui_cmd.sh
+│   └── Xmenu.sh
+└── UserConfigs
+    ├── ENVariables.conf
+    ├── LaptopDisplay.conf
+    ├── Laptops.conf
+    ├── Monitors.conf
+    ├── Startup_Apps.conf
+    ├── UserKeybinds.conf
+    ├── UserSettings.conf
+    └── WindowRules.conf
 
+``````
 
 # 3) Tips and Tricks
 #### ⌨️ Common Operation Keys
