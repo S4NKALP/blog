@@ -10,6 +10,7 @@ contentDir = "content"
 enableGitInfo = true
 
 
+
 [params]
   # Landing page
   ## Avatar
@@ -41,17 +42,17 @@ enableGitInfo = true
     url = "/"
     weight = 1
 
+   [[menu.main]]
+    name = "Posts"
+    pre = "<span data-feather='book'></span>"
+    url = "/posts/"
+    weight = 2
+
   [[menu.main]]
     name = "About"
     pre = "<span data-feather='link'></span>"
     url = "https://S4NKALP.github.io/links"
     weight = 3
-
-  [[menu.main]]
-    name = "Posts"
-    pre = "<span data-feather='book'></span>"
-    url = "/posts/"
-    weight = 2
 
 
   [[menu.main]]
