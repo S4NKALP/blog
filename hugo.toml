@@ -29,6 +29,7 @@ enableGitInfo = true
   dateFormat = "02.01.2006 @ 15:04"
   ## Previous and Next buttons (will not work with the ".Weight" parameter)
   togglePreviousAndNextButtons = "false"
+  footer = "S4NKALP"
 
   # Misc
   ## SEO
