@@ -13,17 +13,16 @@ One of the most daunting things about CMake is that every tutorial assumes that 
 
 But what if you're just starting out and don't know what you're doing? This guide is for you.
 
-This guide has been tested on MacOS and GNU/Linux.
+This guide has been tested on GNU/Linux.
 
 
 ## Setup
 
 ### Download CMake
 
-First, you need to install CMake. On MacOS, you can install it with [Homebrew](https://brew.sh/).
-
+First, you need to install CMake.On Linux (Arch Linux)
 ```bash
-brew install cmake
+sudo pacman -S cmake
 ```
 
 Then, ensure it's installed by running:

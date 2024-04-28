@@ -13,16 +13,16 @@ Many tutorials show you how to create a basic Python app with a couple of module
 
 This guide will show you how to set up a simple Python project with automated testing and a [virtual environment](https://docs.python.org/3/tutorial/venv.html) for 3rd party packages. I have based it on [Dead Simple Python: Project Structure and Imports](https://dev.to/codemouse92/dead-simple-python-project-structure-and-imports-38c6) by [Jason C. McDonald](https://dev.to/codemouse92) with some opinionated changes.
 
-This guide has been tested on MacOS and GNU/Linux.
+This guide has been tested on GNU/Linux.
 
 ## Setup
 
 ### Download Python
 
-First, you need to install Python. On MacOS, you can install it with [Homebrew](https://brew.sh/). Do not use the Python version that comes pre-installed with MacOS, as it's not only outdated but also integral to the OS.
+First, you need to install Python. As I am using Arch Linux as my base, you can use the [pacman package manager](https://wiki.archlinux.org/index.php/Pacman) to install Python.
 
 ```bash
-brew install python3
+sudo pacman -S install python3
 ```
 
 Then, ensure it's installed by running:
