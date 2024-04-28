@@ -1,6 +1,6 @@
 +++
 date = 2024-04-28T07:22:52+05:45
-title = "Introduction to Algorithms and Programming"
+title = "Introduction to Algorithms and Programming 👨‍💻➕"
 description = "Dive into the fascinating world of algorithms and programming with our introductory post. Explore the fundamental concepts of algorithms and how they differ from programs, and discover the importance of data and how they transform into valuable information."
 tags = ["Algorithms", "Programming", "Introduction"]
 type = "post"

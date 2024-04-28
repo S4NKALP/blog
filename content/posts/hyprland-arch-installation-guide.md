@@ -1,6 +1,6 @@
 +++
 date = 2024-04-28T07:28:13+05:45
-title = "Hyprland Arch Installation Guide"
+title = "Hyprland Arch Installation Guide 🐧⚙️"
 description = "Learn to customize hyprland for an efficient desktop on Arch Linux. This article shows you how to tweak every detail for a perfectly riced workspace."
 tags = ["Arch", "Hyprland", "Customization", "Linux"]
 type = "post"

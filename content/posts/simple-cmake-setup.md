@@ -1,6 +1,6 @@
 +++
 date = 2024-04-19T18:17:13+02:00
-title = "Simple C++ App Setup (CMake)"
+title = "Simple C++ App Setup (CMake) 👨‍💻C++"
 description = "How to setup a simple project for C++ apps"
 tags = ["tutorial", "cmake", "c++", "macos", "linux"]
 type = "post"

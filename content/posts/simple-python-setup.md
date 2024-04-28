@@ -1,6 +1,6 @@
 +++
 date = 2024-04-24T00:40:16+02:00
-title = "Simple Python App Setup"
+title = "Simple Python App Setup 👨‍💻</> "
 description = "How to setup a simple project for Python apps"
 tags = ["tutorial", "python", "macos", "linux"]
 type = "post"

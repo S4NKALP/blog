@@ -1,6 +1,6 @@
 +++
 date = 2024-04-28T06:55:32+05:45
-title = "Arch Installation Guide"
+title = "Arch Installation Guide 🐧❤️ "
 description = "Discover how to install Arch Linux, the operating system that gives you total control. This post guides you step by step through the initial setup, creating an environment tailored to you."
 tags = ["Arch", "Linux", "Installation"]
 type = "post"
