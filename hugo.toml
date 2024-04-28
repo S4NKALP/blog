@@ -26,7 +26,7 @@ enableGitInfo = true
   ## Display "back to top" button on posts
   ShowBackToTopButton = true
   ## Date format
-  dateFormat = "02.01.2006"
+  dateFormat = "2 Jan 2006"
   ## Previous and Next buttons (will not work with the ".Weight" parameter)
   togglePreviousAndNextButtons = "false"
   footer = "S4NKALP"
