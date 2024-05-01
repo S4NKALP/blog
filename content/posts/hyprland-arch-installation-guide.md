@@ -7,6 +7,8 @@ type = "post"
 showTableOfContents = true
 +++
 
+## Introduction
+
 Welcome to this guide to install HYPRLAND in your Arch Linux.
 
 Hyprland stands out by fully embracing the Wayland dispaly server protocol, positioning itself as cutting-edge  and future-oriented window manager. Through its integration with Wayland, Hyprland guarantees heightened security, seamless graphical performance, and expanded compatibilty with graphics hardware.
@@ -25,44 +27,22 @@ To install these packages, open a terminal and run the following command:
     $ pacman -S --needed base-devel
     $ git clone https://aur.archlinux.org/paru.git
     $ cd paru
-## Introduction
     $ makepkg -si
 
+
 # 2) Installing Hyprland With My scripts
-    $ git clone https://github.com/S4NKALP/hyprland.git
-    $ cd hyprland
-    $ chmod +x Installer.sh
-    $ ./Installer.sh
-
-After that press y as shown below
-
-
 ```
-_____  _  _      ____   _  __ __  __
-|__  / | || |    / ___| | |/ / \ \/ /
-  / /  | || |_  | |     | ' /   \  /
- / /_  |__   _| | |___  | . \   /  \
-/____|    |_|    \____| |_|\_\ /_/\_\  S4NKALP
-
-
-This script will check if you have the necessary dependencies, and if not, it will install them. Then, it will clone the RICE in your HOME directory.
-After that, it will create a secure backup of your files, and then copy the new files to your computer.
-You will be prompted for your root password to install missing dependencies and/or to switch to zsh shell if its not your default.It will generate log file.
-
-This script doesnt have the potential power to break your system, it only copies files from my repository to your HOME directory.
-
- Do you wish to continue? [y/N]: y
-
-
+     $ git clone https://github.com/S4NKALP/hyprland.git
+     $ cd hyprland
+     $ chmod +x setup
+     $ ./setup
 ```
-
-Then the script do its rest of work.
+Then follow the instructions and the script do its rest of work.
 ``````
 [~/dotfiles] $ tree
 
 hypr
 ├── assets
-│   ├── bak.rofi.png
 │   ├── bell.png
 │   ├── reload.svg
 │   └── rofi.png
