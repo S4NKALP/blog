@@ -38,4 +38,4 @@ A boy from somewhere in Nepal, handsome, good personality, comes from a well off
 <b>Young girl are taking advantage of men's hard work and toil. They will leave thier 4-5 year long realtionship to go abroad and settle fast. If you were in relationship and married or if you were single and married around your age that is fine. But leaving your long term relationship to marry anyone without knowing character.
 It is not only women, knowing women are marrying for their abroad status, incel are doing this too. They will leave their long term girlfriend just to marry young women because they know they can get young women. If both of them were single, that is another story. Incle men and desperate women are doing divorce in mass because that was never a true marriage for them.</b>
 
-
+<B><u>Found on reddit</u></B>
