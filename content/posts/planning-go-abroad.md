@@ -8,6 +8,7 @@ showTableOfContents = true
 +++
 
 ## Are you planning to go abroad? Beware of these scams!!
+<b><h6>Source : Reddit</h6></b>
 
 There are common scams running in Nepal for those going abroad. All done through informal channel so take these information to be aware.
 
@@ -38,4 +39,3 @@ A boy from somewhere in Nepal, handsome, good personality, comes from a well off
 <h5>Young girl are taking advantage of men's hard work and toil. They will leave thier 4-5 year long realtionship to go abroad and settle fast. If you were in relationship and married or if you were single and married around your age that is fine. But leaving your long term relationship to marry anyone without knowing character.
 It is not only women, knowing women are marrying for their abroad status, incel are doing this too. They will leave their long term girlfriend just to marry young women because they know they can get young women. If both of them were single, that is another story. Incle men and desperate women are doing divorce in mass because that was never a true marriage for them.</h5>
 
-<B><u>Found on reddit</u></B>
