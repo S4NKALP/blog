@@ -35,7 +35,7 @@ A girl I know married this December to a much much older guy. The girl was beaut
 A boy from somewhere in Nepal, handsome, good personality, comes from a well off family sent marriage proposal to a girl. They knew each other from Instagram. She declined the proposal saying she isn't ready to marry for next 2 years. Few months later what he hear, she is getting married to a guy living in Canada. Thought the guy cancelled the marriage for some unknown reasons.
 
 
-<b>Young girl are taking advantage of men's hard work and toil. They will leave thier 4-5 year long realtionship to go abroad and settle fast. If you were in relationship and married or if you were single and married around your age that is fine. But leaving your long term relationship to marry anyone without knowing character.
-It is not only women, knowing women are marrying for their abroad status, incel are doing this too. They will leave their long term girlfriend just to marry young women because they know they can get young women. If both of them were single, that is another story. Incle men and desperate women are doing divorce in mass because that was never a true marriage for them.</b>
+<h5>Young girl are taking advantage of men's hard work and toil. They will leave thier 4-5 year long realtionship to go abroad and settle fast. If you were in relationship and married or if you were single and married around your age that is fine. But leaving your long term relationship to marry anyone without knowing character.
+It is not only women, knowing women are marrying for their abroad status, incel are doing this too. They will leave their long term girlfriend just to marry young women because they know they can get young women. If both of them were single, that is another story. Incle men and desperate women are doing divorce in mass because that was never a true marriage for them.</h5>
 
 <B><u>Found on reddit</u></B>
