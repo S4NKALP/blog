@@ -1,6 +1,6 @@
 +++
 date = 2024-05-07T18:06:58+05:45
-title = "Planning Go Abroad?"
+title = "Planning To Go Abroad?"
 description = "Beware of these scams."
 tags = ["dependent", "abroad", "Nepal", "Scams"]
 type = "post"
