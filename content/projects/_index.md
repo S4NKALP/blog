@@ -1,7 +1,0 @@
-+++
-title = "Projects"
-type = "page"
-+++
-
-
-
