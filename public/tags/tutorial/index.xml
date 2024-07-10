@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorial on S4NKALP | Blog</title>
+    <link>http://localhost:1313/tags/tutorial/</link>
+    <description>Recent content in Tutorial on S4NKALP | Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 19 Apr 2024 18:17:13 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simple C&#43;&#43; App Setup (CMake) 👨‍💻C&#43;&#43;</title>
+      <link>http://localhost:1313/posts/simple-cmake-setup/</link>
+      <pubDate>Fri, 19 Apr 2024 18:17:13 +0200</pubDate>
+      
+      <guid>http://localhost:1313/posts/simple-cmake-setup/</guid>
+      
+      <description>Introduction One of the most daunting things about CMake is that every tutorial assumes that you have multiple libraries and executables to build.
+But what if you&amp;rsquo;re just starting out and don&amp;rsquo;t know what you&amp;rsquo;re doing? This guide is for you.
+This guide has been tested on GNU/Linux.
+Setup Download CMake First, you need to install CMake.On Linux (Arch Linux)
+sudo pacman -S cmake Then, ensure it&amp;rsquo;s installed by running:</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open-Source, Github, Contribution on S4NKALP | Blog</title>
+    <link>http://localhost:1313/tags/open-source-github-contribution/</link>
+    <description>Recent content in Open-Source, Github, Contribution on S4NKALP | Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/open-source-github-contribution/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to be a good open source ‍🧑‍💻🌏</title>
+      <link>http://localhost:1313/posts/how-to-be-a-good-open-source/</link>
+      <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/how-to-be-a-good-open-source/</guid>
+      
+      <description>What&amp;rsquo;s the coolest thing about open source software? 💭 If you need a new feature, you can just go ahead and add it yourself! Here are some tips I learned along the way:
+Add Value Make sure your contribution adds value to the project. Don&amp;rsquo;t just contribute because it&amp;rsquo;s trendy.
+Ask for Help Don&amp;rsquo;t expect to get everything right on the first try. Ask the project maintainers for feedback and guidance.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

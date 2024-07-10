@@ -1,0 +1,79 @@
+baseURL = 'https://example.org/'
+title = 'S4NKALP | Blog'
+theme = "hugo-blog-awesome"
+languageCode = 'en-us'
+enableEmoji = true
+
+
+[menu]
+  [[menu.main]]
+    pageRef="/"
+    name = 'Home'
+    url = '/'
+    weight = 10
+  [[menu.main]]
+    pageRef="posts"
+    name = 'Posts'
+    url = '/posts/'
+    weight = 20
+  [[menu.main]]
+    pageRef="about"
+    name = 'About'
+    url = '/about/'
+    weight = 30
+
+[params]
+  sitename = "S4NKALP"
+  defaultColor = "auto"
+  description = "Blog posts and more"
+  mainSections = ['posts']
+  toc = false
+  tocOpen = false
+  goToTop = true
+  dateFormat = "2 Jan 2006"
+  rssFeedDescription = "summary"
+
+
+[params.author]
+  avatar = "avatar.jpg"
+  intro = "Sankalp"
+  name = "Sankalp Tharu"
+  description = "Thoughts of a Passion Driven Developer"
+
+[params.webmanifest]
+  name = "S4NKALP"
+  short_name = "S4NKALP" # same as name
+  start_url = "/"
+  theme_color = "#434648"
+  background_color = "#fff"
+  display = "standalone"
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/S4NKALP"
+
+[[params.socialIcons]]
+name = "gitlab"
+url = "https://gitlab.com/S4NKALP"
+
+[[params.socialIcons]]
+name = "facebook"
+url = "https://www.facebook.com/sankalptharu50028"
+
+[[params.socialIcons]]
+name = "email"
+url = "mailto:sankaptharu50028@gmail.com"
+
+[[params.socialIcons]]
+name = "reddit"
+url = "https://www.reddit.com/user/S4NKALP/"
+
+[[params.socialIcons]]
+name = "telegram"
+url = "https://t.me/sankalp112233"
+
+[[params.socialIcons]]
+name = "discord"
+url = "https://discordapp.com/users/1033402205442670663"
+
+

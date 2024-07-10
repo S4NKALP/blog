@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Leetcode on S4NKALP | Blog</title>
+    <link>http://localhost:1313/tags/leetcode/</link>
+    <description>Recent content in Leetcode on S4NKALP | Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Apr 2024 14:28:46 +0545</lastBuildDate><atom:link href="http://localhost:1313/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Add Numbers Without Arthemetic 🙅‍♂️➕</title>
+      <link>http://localhost:1313/posts/add-numbers-without-arthemetic/</link>
+      <pubDate>Sun, 28 Apr 2024 14:28:46 +0545</pubDate>
+      
+      <guid>http://localhost:1313/posts/add-numbers-without-arthemetic/</guid>
+      
+      <description>What if you are given a problem where you have to add two integers but you can&amp;rsquo;t use any arithmetic operators (+ - * / % // **), like LeetCode&amp;rsquo;s problem #371.
+So how do you approach this problem? Answer: Bit manipulation
+Problems like this can be solved using bit-wise operators as basic mathematics rules work in the same way whether it be binary or decimal. All we have to do is:</description>
+      
+    </item>
+    
+  </channel>
+</rss>

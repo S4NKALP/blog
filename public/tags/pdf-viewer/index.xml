@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pdf Viewer on S4NKALP | Blog</title>
+    <link>http://localhost:1313/tags/pdf-viewer/</link>
+    <description>Recent content in Pdf Viewer on S4NKALP | Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 Jul 2024 11:28:20 +0545</lastBuildDate><atom:link href="http://localhost:1313/tags/pdf-viewer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to download view only protected PDF form Google Drive(JS Code)</title>
+      <link>http://localhost:1313/posts/download_view_only_protected_pdf_from_google_drive/</link>
+      <pubDate>Wed, 10 Jul 2024 11:28:20 +0545</pubDate>
+      
+      <guid>http://localhost:1313/posts/download_view_only_protected_pdf_from_google_drive/</guid>
+      
+      <description>Download view only protected PDF form Google Drive(JS Code) Here you can use this script to download view only pdf file from Google Drive. This script works like a screenshot capturing all pdf pages to bulk of images with better resolution quality and combine it all into one pdf file. Note 1: It was tested on Chrome Browser, Firefox.
+Note 2: If you’re getting only part of the document visible, try zooming out your browser and then run the script.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

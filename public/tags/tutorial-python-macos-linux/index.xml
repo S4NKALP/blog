@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorial, Python, Macos, Linux on S4NKALP | Blog</title>
+    <link>http://localhost:1313/tags/tutorial-python-macos-linux/</link>
+    <description>Recent content in Tutorial, Python, Macos, Linux on S4NKALP | Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/tutorial-python-macos-linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simple Python App Setup 👨‍💻&lt;/&gt;</title>
+      <link>http://localhost:1313/posts/simple-python-setup/</link>
+      <pubDate>Wed, 24 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/simple-python-setup/</guid>
+      
+      <description>Introduction Many tutorials show you how to create a basic Python app with a couple of modules, but they rarely explain how to set up a whole project.
+This guide will show you how to set up a simple Python project with automated testing and a virtual environment for 3rd party packages. I have based it on Dead Simple Python: Project Structure and Imports by Jason C. McDonald with some opinionated changes.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

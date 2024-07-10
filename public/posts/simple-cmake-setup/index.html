@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Simple C&#43;&#43; App Setup (CMake) 👨‍💻C&#43;&#43; | S4NKALP | Blog</title>
+<meta property="og:title" content="Simple C&#43;&#43; App Setup (CMake) 👨‍💻C&#43;&#43; | S4NKALP | Blog" />
+<meta name="twitter:title" content="Simple C&#43;&#43; App Setup (CMake) 👨‍💻C&#43;&#43; | S4NKALP | Blog" />
+<meta itemprop="name" content="Simple C&#43;&#43; App Setup (CMake) 👨‍💻C&#43;&#43; | S4NKALP | Blog" />
+<meta name="application-name" content="Simple C&#43;&#43; App Setup (CMake) 👨‍💻C&#43;&#43; | S4NKALP | Blog" />
+<meta property="og:site_name" content="S4NKALP" />
+
+<meta name="description" content="How to setup a simple project for C&#43;&#43; apps">
+<meta itemprop="description" content="How to setup a simple project for C&#43;&#43; apps" />
+<meta property="og:description" content="How to setup a simple project for C&#43;&#43; apps" />
+<meta name="twitter:description" content="How to setup a simple project for C&#43;&#43; apps" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en" href="http://localhost:1313/posts/simple-cmake-setup/" title="" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2024-04-19T00:00:00Z />
+    <meta property="article:published_time" content=2024-04-19T00:00:00Z />
+
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Simple C++ App Setup (CMake) 👨‍💻C++",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2024-04-19",
+        "description": "How to setup a simple project for C++ apps",
+        "wordCount":  2168 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2024-04-19",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "S4NKALP | Blog"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.128.2">
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/posts/simple-cmake-setup/">
+    <link href="/style.min.d43bc6c79baa87f006efb2b92be952faeedeb1a3ab626c1d6abda52eae049355.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    </head>
+<body data-theme = "auto" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title></title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Simple C&#43;&#43; App Setup (CMake) 👨‍💻C&#43;&#43;</h1>
+                
+                
+                <div class="post-meta">
+                    <time datetime="2024-04-19T00:00:00&#43;00:00" itemprop="datePublished"> Apr 19, 2024 </time>
+                </div>
+                
+            </header>
+            
+            <div class="page-content">
+                <h2 id="introduction">Introduction</h2>
+<p>One of the most daunting things about CMake is that every tutorial assumes that you have multiple libraries and executables to build.</p>
+<p>But what if you&rsquo;re just starting out and don&rsquo;t know what you&rsquo;re doing? This guide is for you.</p>
+<p>This guide has been tested on GNU/Linux.</p>
+<h2 id="setup">Setup</h2>
+<h3 id="download-cmake">Download CMake</h3>
+<p>First, you need to install CMake.On Linux (Arch Linux)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S cmake
+</span></span></code></pre></div><p>Then, ensure it&rsquo;s installed by running:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cmake --version
+</span></span></code></pre></div><h3 id="create-a-c-project">Create a C++ Project</h3>
+<p>Create a new directory for your project and <code>cd</code> into it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir sample-project
+</span></span><span style="display:flex;"><span>cd sample-project
+</span></span></code></pre></div><p>Create a <code>src</code> directory for your C++ code.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir src
+</span></span></code></pre></div><p>Create a bunch of C++ files in the <code>src</code> directory.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>touch src/main.cpp
+</span></span><span style="display:flex;"><span>touch src/lib.hpp
+</span></span><span style="display:flex;"><span>touch src/lib.cpp
+</span></span></code></pre></div><p>You should have the following directory structure.</p>
+<pre tabindex="0"><code>[~/sample-project] $ tree
+.
+└── src
+    ├── lib.cpp
+    ├── lib.hpp
+    └── main.cpp
+</code></pre><p>Add the following to <code>main.cpp</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">  </span><span style="color:#75715e">// for std::cout
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;lib.hpp&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> lib<span style="color:#f92672">::</span>get_hello_world() <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Add the following to <code>lib.hpp</code>.</p>
+<p><strong>Note:</strong> <code>[[nodiscard]]</code> requires C++17 and should be only placed in headers.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#pragma once
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">  </span><span style="color:#75715e">// for std::string
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> lib {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @brief Get the hello world string.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @return String containing &#34;Hello World!&#34;.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">[[nodiscard]]</span> std<span style="color:#f92672">::</span>string get_hello_world();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}  <span style="color:#75715e">// namespace lib
+</span></span></span></code></pre></div><p>Add the following to <code>lib.cpp</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;lib.hpp&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">  </span><span style="color:#75715e">// for std::string
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>std<span style="color:#f92672">::</span>string lib<span style="color:#f92672">::</span>get_hello_world()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Hello World!&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="create-a-cmakeliststxt">Create a CMakeLists.txt</h3>
+<p>Create a new file called <code>CMakeLists.txt</code> in the root of your project.</p>
+<pre tabindex="0"><code class="language-touch" data-lang="touch">touch CMakeLists.txt
+</code></pre><p>You should have the following directory structure.</p>
+<pre tabindex="0"><code>[~/sample-project] $ tree
+.
+├── CMakeLists.txt
+└── src
+    ├── lib.cpp
+    ├── lib.hpp
+    └── main.cpp
+</code></pre><p>Add the following to <code>CMakeLists.txt</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span><span style="color:#75715e"># Set minimum required version of CMake (3.20.1 properly supports Apple Sillicon)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>cmake_minimum_required(<span style="color:#e6db74">VERSION</span> <span style="color:#e6db74">3.20.1</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Set project name and language
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>project(
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">sample-project</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">LANGUAGES</span> <span style="color:#e6db74">CXX</span>
+</span></span><span style="display:flex;"><span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Set standard without compiler specific extensions, export compile commands
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>set(<span style="color:#e6db74">CMAKE_CXX_STANDARD</span> <span style="color:#e6db74">17</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">CMAKE_CXX_STANDARD_REQUIRED</span> <span style="color:#e6db74">ON</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">CMAKE_CXX_EXTENSIONS</span> <span style="color:#e6db74">OFF</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">CMAKE_EXPORT_COMPILE_COMMANDS</span> <span style="color:#e6db74">ON</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Require out-of-source builds
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>if(<span style="color:#e6db74">CMAKE_SOURCE_DIR</span> <span style="color:#e6db74">STREQUAL</span> <span style="color:#e6db74">CMAKE_BINARY_DIR</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  message(<span style="color:#e6db74">FATAL_ERROR</span> <span style="color:#e6db74">&#34;In-source builds not allowed. Please make a separate build directory and run CMake from there.&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>endif()<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Set default build type to Release
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>if(<span style="color:#e6db74">NOT</span> <span style="color:#e6db74">CMAKE_BUILD_TYPE</span> <span style="color:#e6db74">AND</span> <span style="color:#e6db74">NOT</span> <span style="color:#e6db74">CMAKE_CONFIGURATION_TYPES</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  message(<span style="color:#e6db74">STATUS</span> <span style="color:#e6db74">&#34;Setting build type to \&#34;</span><span style="color:#e6db74">Release\</span><span style="color:#e6db74">&#34; as none was specified.&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  set(<span style="color:#e6db74">CMAKE_BUILD_TYPE</span> <span style="color:#e6db74">&#34;Release&#34;</span> <span style="color:#e6db74">CACHE</span> <span style="color:#e6db74">STRING</span> <span style="color:#e6db74">&#34;Choose the type of build.&#34;</span> <span style="color:#e6db74">FORCE</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e"># Set the possible values of build type for cmake-gui
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  set_property(<span style="color:#e6db74">CACHE</span> <span style="color:#e6db74">CMAKE_BUILD_TYPE</span> <span style="color:#e6db74">PROPERTY</span> <span style="color:#e6db74">STRINGS</span> <span style="color:#e6db74">&#34;Debug&#34;</span> <span style="color:#e6db74">&#34;Release&#34;</span> <span style="color:#e6db74">&#34;MinSizeRel&#34;</span> <span style="color:#e6db74">&#34;RelWithDebInfo&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>endif()<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Add executable target
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>add_executable(<span style="color:#f92672">${</span>PROJECT_NAME<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">src/main.cpp</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">src/lib.cpp</span>
+</span></span><span style="display:flex;"><span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Enable compile warnings (if not on Windows)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>if(<span style="color:#e6db74">NOT</span> <span style="color:#e6db74">WIN32</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  target_compile_options(<span style="color:#f92672">${</span>PROJECT_NAME<span style="color:#f92672">}</span> <span style="color:#e6db74">PRIVATE</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">-Wall</span>                 <span style="color:#75715e"># Enable most warning flags
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wcast-align</span>          <span style="color:#75715e"># Warn for potential performance problems when casting a pointer to a type with stricter alignment requirements
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wconversion</span>          <span style="color:#75715e"># Warn on type conversions that may lose data
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wdouble-promotion</span>    <span style="color:#75715e"># Warn if a float is implicitly promoted to double
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Werror</span>               <span style="color:#75715e"># Treat warnings as errors (stop compilation if any warning is present)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wextra</span>               <span style="color:#75715e"># Enable extra warning flags that are not enabled by &#34;-Wall&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wformat=2</span>            <span style="color:#75715e"># Warn on security issues around functions that format output (like printf), this includes all &#34;-Wformat&#34; warnings and more
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wnon-virtual-dtor</span>    <span style="color:#75715e"># Warn when a class with virtual functions has a non-virtual destructor, which can lead to undefined behavior
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wnull-dereference</span>    <span style="color:#75715e"># Warn if a null dereference is detected
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wold-style-cast</span>      <span style="color:#75715e"># Warn for usage of C-style casts
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Woverloaded-virtual</span>  <span style="color:#75715e"># Warn when a derived class function declaration may be an error due to hiding a virtual function from the base class
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wpedantic</span>            <span style="color:#75715e"># Warn on features that are not part of the ISO C++ standard
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wshadow</span>              <span style="color:#75715e"># Warn when a local variable shadows another local variable, parameter, global variable, or function
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wsign-conversion</span>     <span style="color:#75715e"># Warn on sign conversions (e.g., when a negative integer is converted to an unsigned integer)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wunused</span>              <span style="color:#75715e"># Warn on anything being unused
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  )<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>endif()<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Add install target (for &#34;sudo cmake --install .&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>install(<span style="color:#e6db74">TARGETS</span> <span style="color:#f92672">${</span>PROJECT_NAME<span style="color:#f92672">}</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Print the build type
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>message(<span style="color:#e6db74">STATUS</span> <span style="color:#e6db74">&#34;Build type: ${CMAKE_BUILD_TYPE}.&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>Now let&rsquo;s go step by step through the <code>CMakeLists.txt</code>.</p>
+<ol>
+<li>
+<p>Set the minimum required version of CMake. As a rule of thumb, you should set this to the version you have installed, but refer to <a href="https://cliutils.gitlab.io/modern-cmake/chapters/intro/dodonot.html">this</a> for more information.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>cmake_minimum_required(<span style="color:#e6db74">VERSION</span> <span style="color:#e6db74">3.20.1</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+<li>
+<p>Set the project&rsquo;s name to <code>sample-project</code> and the language to C++. You can replace <code>sample-project</code> with your project&rsquo;s name, e.g., <code>my-awesome-project</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>project(
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">sample-project</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">LANGUAGES</span> <span style="color:#e6db74">CXX</span>
+</span></span><span style="display:flex;"><span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+<li>
+<p>Set the required C++ standard to 17 and disable compiler-specific extensions (e.g., <code>gnu++17</code>) to ensure that your code is cross-platform. Enable exporting of the compile commands to a JSON file, which is useful for IDEs.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>set(<span style="color:#e6db74">CMAKE_CXX_STANDARD</span> <span style="color:#e6db74">17</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">CMAKE_CXX_STANDARD_REQUIRED</span> <span style="color:#e6db74">ON</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">CMAKE_CXX_EXTENSIONS</span> <span style="color:#e6db74">OFF</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">CMAKE_EXPORT_COMPILE_COMMANDS</span> <span style="color:#e6db74">ON</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+<li>
+<p>Ensure that you don&rsquo;t build in the root or <code>src</code> directory. You should always build in the <code>build</code> directory to ensure that your project doesn&rsquo;t get polluted with build files and cache.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>if(<span style="color:#e6db74">CMAKE_SOURCE_DIR</span> <span style="color:#e6db74">STREQUAL</span> <span style="color:#e6db74">CMAKE_BINARY_DIR</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  message(<span style="color:#e6db74">FATAL_ERROR</span> <span style="color:#e6db74">&#34;In-source builds not allowed. Please make a separate build directory and run CMake from there.&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>endif()<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+<li>
+<p>Set the default build type to <code>Release</code>. By default, CMake will not set any build types. You&rsquo;d probably want to set it to <code>Release</code>, unless specified otherwise using the <code>-DCMAKE_BUILD_TYPE=BUILD_TYPE</code> flag (e.g., <code>cmake .. -DCMAKE_BUILD_TYPE=Debug</code>). This will also enable the relevant optimizations for the build type (e.g., <code>-O3</code> or <code>-O2</code> for <code>Release</code>).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>if(<span style="color:#e6db74">NOT</span> <span style="color:#e6db74">CMAKE_BUILD_TYPE</span> <span style="color:#e6db74">AND</span> <span style="color:#e6db74">NOT</span> <span style="color:#e6db74">CMAKE_CONFIGURATION_TYPES</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  message(<span style="color:#e6db74">STATUS</span> <span style="color:#e6db74">&#34;Setting build type to \&#34;</span><span style="color:#e6db74">Release\</span><span style="color:#e6db74">&#34; as none was specified.&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  set(<span style="color:#e6db74">CMAKE_BUILD_TYPE</span> <span style="color:#e6db74">&#34;Release&#34;</span> <span style="color:#e6db74">CACHE</span> <span style="color:#e6db74">STRING</span> <span style="color:#e6db74">&#34;Choose the type of build.&#34;</span> <span style="color:#e6db74">FORCE</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e"># Set the possible values of build type for cmake-gui
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  set_property(<span style="color:#e6db74">CACHE</span> <span style="color:#e6db74">CMAKE_BUILD_TYPE</span> <span style="color:#e6db74">PROPERTY</span> <span style="color:#e6db74">STRINGS</span> <span style="color:#e6db74">&#34;Debug&#34;</span> <span style="color:#e6db74">&#34;Release&#34;</span> <span style="color:#e6db74">&#34;MinSizeRel&#34;</span> <span style="color:#e6db74">&#34;RelWithDebInfo&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>endif()<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+<li>
+<p>Set the executable&rsquo;s name to <code>${PROJECT_NAME}</code> (which is <code>sample-project</code> in this case) and add the source files to it. The files should be listed explicitly, as globbing will require re-running CMake to detect new files. Listing the files explicitly is a <a href="https://stackoverflow.com/questions/1027247/is-it-better-to-specify-source-files-with-glob-or-each-file-individually-in-cmak">good practice</a>, especially when working with <a href="https://stackoverflow.com/questions/32411963/why-is-cmake-file-glob-evil">multiple people</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>add_executable(<span style="color:#f92672">${</span>PROJECT_NAME<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">src/main.cpp</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">src/lib.cpp</span>
+</span></span><span style="display:flex;"><span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+<li>
+<p>Enable compile warnings. This is a good practice to catch potential bugs early. Use <code>target_compile_options</code> instead of <code>add_compile_options</code> to only enable it for your code. If you add a 3rd party library, you don&rsquo;t want to see their warnings.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>if(<span style="color:#e6db74">NOT</span> <span style="color:#e6db74">WIN32</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  target_compile_options(<span style="color:#f92672">${</span>PROJECT_NAME<span style="color:#f92672">}</span> <span style="color:#e6db74">PRIVATE</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">-Wall</span>                 <span style="color:#75715e"># Enable most warning flags
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wcast-align</span>          <span style="color:#75715e"># Warn for potential performance problems when casting a pointer to a type with stricter alignment requirements
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wconversion</span>          <span style="color:#75715e"># Warn on type conversions that may lose data
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wdouble-promotion</span>    <span style="color:#75715e"># Warn if a float is implicitly promoted to double
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Werror</span>               <span style="color:#75715e"># Treat warnings as errors (stop compilation if any warning is present)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wextra</span>               <span style="color:#75715e"># Enable extra warning flags that are not enabled by &#34;-Wall&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wformat=2</span>            <span style="color:#75715e"># Warn on security issues around functions that format output (like printf), this includes all &#34;-Wformat&#34; warnings and more
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wnon-virtual-dtor</span>    <span style="color:#75715e"># Warn when a class with virtual functions has a non-virtual destructor, which can lead to undefined behavior
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wnull-dereference</span>    <span style="color:#75715e"># Warn if a null dereference is detected
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wold-style-cast</span>      <span style="color:#75715e"># Warn for usage of C-style casts
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Woverloaded-virtual</span>  <span style="color:#75715e"># Warn when a derived class function declaration may be an error due to hiding a virtual function from the base class
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wpedantic</span>            <span style="color:#75715e"># Warn on features that are not part of the ISO C++ standard
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wshadow</span>              <span style="color:#75715e"># Warn when a local variable shadows another local variable, parameter, global variable, or function
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wsign-conversion</span>     <span style="color:#75715e"># Warn on sign conversions (e.g., when a negative integer is converted to an unsigned integer)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wunused</span>              <span style="color:#75715e"># Warn on anything being unused
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  )<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>endif()<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+<li>
+<p>Add install target, so that the program can be installed using <code>sudo cmake --install .</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>install(<span style="color:#e6db74">TARGETS</span> <span style="color:#f92672">${</span>PROJECT_NAME<span style="color:#f92672">}</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+<li>
+<p>Print the build type to the console as a sanity check.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>message(<span style="color:#e6db74">STATUS</span> <span style="color:#e6db74">&#34;Build type: ${CMAKE_BUILD_TYPE}.&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></li>
+</ol>
+<h3 id="build-the-project">Build the Project</h3>
+<p>To build the project, create a <code>build</code> directory in the root of your project and <code>cd</code> into it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir build
+</span></span><span style="display:flex;"><span>cd build
+</span></span></code></pre></div><p>You should have the following directory structure.</p>
+<pre tabindex="0"><code>[~/sample-project] $ tree
+.
+├── CMakeLists.txt
+├── build
+└── src
+    ├── lib.cpp
+    ├── lib.hpp
+    └── main.cpp
+</code></pre><p>Generate the build files using the <code>CMakeLists.txt</code> in the directory above.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cmake ..
+</span></span></code></pre></div><p>Compile the project. The <code>-j</code> flag is used to enable parallel compilation for all threads.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make -j
+</span></span></code></pre></div><p>Run the program.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./sample-project
+</span></span></code></pre></div><p>Now let&rsquo;s go step by step through what you did.</p>
+<ol>
+<li>
+<p>You created a <code>build</code> directory in the root of your project and <code>cd</code> into it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir build
+</span></span><span style="display:flex;"><span>cd build
+</span></span></code></pre></div></li>
+<li>
+<p>You used CMake to generate a platform-specific build system while being in the <code>build</code> directory. The <code>..</code> is a relative path pointing to the directory above. In this context, it refers to the root of your project (<code>~/sample-project</code>), which is where the <code>CMakeLists.txt</code> is located. Depending on your environment, the output could be a Makefile, Ninja, or a Visual Studio solution. If you&rsquo;ve ever had to manually create a Makefile, you&rsquo;ll appreciate how CMake simplifies this process by automatically generating the build system for you.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cmake ..
+</span></span></code></pre></div></li>
+<li>
+<p>You used the generated build system to compile the project.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make -j
+</span></span></code></pre></div></li>
+</ol>
+<p>Once you have generated the build system, you don&rsquo;t need to run <code>cmake ..</code> again. You only need to run <code>make -j</code> to compile the project. The regeneration will only be required if you modify the <code>CMakeLists.txt</code> (e.g., add more source files).</p>
+<h2 id="add-3rd-party-libraries">Add 3rd Party Libraries</h2>
+<p>If you want to add a 3rd party library, you can use <code>FetchContent</code> to download the library during the configuration step. You can use it to download a Git repository or a URL. Refer to <a href="https://www.foonathan.net/2022/06/cmake-fetchcontent/">this</a> for more information on <code>FetchContent</code>. <a href="https://lchsk.com/how-to-use-git-submodules-and-cmake-to-install-c-libraries">Git submodules</a> are also quite convenient, but they are beyond the scope of this tutorial.</p>
+<p>The basic usage is as follows - you download the <a href="https://github.com/daniele77/cli">cli</a> library from GitHub and link it to your project.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>include(<span style="color:#e6db74">FetchContent</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>FetchContent_Declare(
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">cli</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">GIT_REPOSITORY</span> <span style="color:#e6db74">https://github.com/daniele77/cli.git</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">GIT_TAG</span> <span style="color:#e6db74">v2.1.0</span>
+</span></span><span style="display:flex;"><span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>FetchContent_MakeAvailable(<span style="color:#e6db74">cli</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>target_link_libraries(
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">${</span>PROJECT_NAME<span style="color:#f92672">}</span> <span style="color:#e6db74">PRIVATE</span> <span style="color:#e6db74">cli::cli</span>
+</span></span><span style="display:flex;"><span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>Once you run <code>cmake ..</code> inside the <code>build</code> directory, the <code>cli</code> library will be downloaded, built, and linked to your project.</p>
+<p>However, you can also enable verbose mode, disable updates on every configure, and set the download directory to <code>deps</code> instead of storing it in the <code>build</code> directory. This makes it easier to <code>rm -rf</code> the <code>build</code> directory if something goes wrong.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>include(<span style="color:#e6db74">FetchContent</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">FETCHCONTENT_QUIET</span> <span style="color:#e6db74">OFF</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">FETCHCONTENT_UPDATES_DISCONNECTED</span> <span style="color:#e6db74">ON</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">FETCHCONTENT_BASE_DIR</span> <span style="color:#f92672">${</span>CMAKE_SOURCE_DIR<span style="color:#f92672">}</span><span style="color:#e6db74">/deps</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>FetchContent_Declare(
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">cli</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">GIT_REPOSITORY</span> <span style="color:#e6db74">https://github.com/daniele77/cli.git</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">GIT_TAG</span> <span style="color:#e6db74">v2.1.0</span>
+</span></span><span style="display:flex;"><span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>FetchContent_MakeAvailable(<span style="color:#e6db74">cli</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>target_link_libraries(
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">${</span>PROJECT_NAME<span style="color:#f92672">}</span> <span style="color:#e6db74">PRIVATE</span> <span style="color:#e6db74">cli::cli</span>
+</span></span><span style="display:flex;"><span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h3 id="final-cmakeliststxt">Final CMakeLists.txt</h3>
+<p>Here is the final <code>CMakeLists.txt</code> with the <code>cli</code> library added.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span><span style="color:#75715e"># Set minimum required version of CMake (3.20.1 properly supports Apple Sillicon)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>cmake_minimum_required(<span style="color:#e6db74">VERSION</span> <span style="color:#e6db74">3.20.1</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Set project name and language
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>project(
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">sample-project</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">LANGUAGES</span> <span style="color:#e6db74">CXX</span>
+</span></span><span style="display:flex;"><span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Set standard without compiler specific extensions, export compile commands
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>set(<span style="color:#e6db74">CMAKE_CXX_STANDARD</span> <span style="color:#e6db74">17</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">CMAKE_CXX_STANDARD_REQUIRED</span> <span style="color:#e6db74">ON</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">CMAKE_CXX_EXTENSIONS</span> <span style="color:#e6db74">OFF</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">CMAKE_EXPORT_COMPILE_COMMANDS</span> <span style="color:#e6db74">ON</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Require out-of-source builds
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>if(<span style="color:#e6db74">CMAKE_SOURCE_DIR</span> <span style="color:#e6db74">STREQUAL</span> <span style="color:#e6db74">CMAKE_BINARY_DIR</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  message(<span style="color:#e6db74">FATAL_ERROR</span> <span style="color:#e6db74">&#34;In-source builds not allowed. Please make a separate build directory and run CMake from there.&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>endif()<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Set default build type to Release
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>if(<span style="color:#e6db74">NOT</span> <span style="color:#e6db74">CMAKE_BUILD_TYPE</span> <span style="color:#e6db74">AND</span> <span style="color:#e6db74">NOT</span> <span style="color:#e6db74">CMAKE_CONFIGURATION_TYPES</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  message(<span style="color:#e6db74">STATUS</span> <span style="color:#e6db74">&#34;Setting build type to \&#34;</span><span style="color:#e6db74">Release\</span><span style="color:#e6db74">&#34; as none was specified.&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  set(<span style="color:#e6db74">CMAKE_BUILD_TYPE</span> <span style="color:#e6db74">&#34;Release&#34;</span> <span style="color:#e6db74">CACHE</span> <span style="color:#e6db74">STRING</span> <span style="color:#e6db74">&#34;Choose the type of build.&#34;</span> <span style="color:#e6db74">FORCE</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e"># Set the possible values of build type for cmake-gui
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  set_property(<span style="color:#e6db74">CACHE</span> <span style="color:#e6db74">CMAKE_BUILD_TYPE</span> <span style="color:#e6db74">PROPERTY</span> <span style="color:#e6db74">STRINGS</span> <span style="color:#e6db74">&#34;Debug&#34;</span> <span style="color:#e6db74">&#34;Release&#34;</span> <span style="color:#e6db74">&#34;MinSizeRel&#34;</span> <span style="color:#e6db74">&#34;RelWithDebInfo&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>endif()<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Add executable target
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>add_executable(<span style="color:#f92672">${</span>PROJECT_NAME<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">src/main.cpp</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">src/lib.cpp</span>
+</span></span><span style="display:flex;"><span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Enable compile warnings (if not on Windows)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>if(<span style="color:#e6db74">NOT</span> <span style="color:#e6db74">WIN32</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  target_compile_options(<span style="color:#f92672">${</span>PROJECT_NAME<span style="color:#f92672">}</span> <span style="color:#e6db74">PRIVATE</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">-Wall</span>                 <span style="color:#75715e"># Enable most warning flags
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wcast-align</span>          <span style="color:#75715e"># Warn for potential performance problems when casting a pointer to a type with stricter alignment requirements
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wconversion</span>          <span style="color:#75715e"># Warn on type conversions that may lose data
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wdouble-promotion</span>    <span style="color:#75715e"># Warn if a float is implicitly promoted to double
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Werror</span>               <span style="color:#75715e"># Treat warnings as errors (stop compilation if any warning is present)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wextra</span>               <span style="color:#75715e"># Enable extra warning flags that are not enabled by &#34;-Wall&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wformat=2</span>            <span style="color:#75715e"># Warn on security issues around functions that format output (like printf), this includes all &#34;-Wformat&#34; warnings and more
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wnon-virtual-dtor</span>    <span style="color:#75715e"># Warn when a class with virtual functions has a non-virtual destructor, which can lead to undefined behavior
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wnull-dereference</span>    <span style="color:#75715e"># Warn if a null dereference is detected
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wold-style-cast</span>      <span style="color:#75715e"># Warn for usage of C-style casts
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Woverloaded-virtual</span>  <span style="color:#75715e"># Warn when a derived class function declaration may be an error due to hiding a virtual function from the base class
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wpedantic</span>            <span style="color:#75715e"># Warn on features that are not part of the ISO C++ standard
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wshadow</span>              <span style="color:#75715e"># Warn when a local variable shadows another local variable, parameter, global variable, or function
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wsign-conversion</span>     <span style="color:#75715e"># Warn on sign conversions (e.g., when a negative integer is converted to an unsigned integer)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">-Wunused</span>              <span style="color:#75715e"># Warn on anything being unused
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  )<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>endif()<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Setup dependency management, enable verbose mode, disable updates on every configure, set the download directory to &#34;deps&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>include(<span style="color:#e6db74">FetchContent</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">FETCHCONTENT_QUIET</span> <span style="color:#e6db74">OFF</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">FETCHCONTENT_UPDATES_DISCONNECTED</span> <span style="color:#e6db74">ON</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">FETCHCONTENT_BASE_DIR</span> <span style="color:#f92672">${</span>CMAKE_SOURCE_DIR<span style="color:#f92672">}</span><span style="color:#e6db74">/deps</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>message(<span style="color:#e6db74">STATUS</span> <span style="color:#e6db74">&#34;Setting up dependencies.&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Add cli as a dependency
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>FetchContent_Declare(
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">cli</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">GIT_REPOSITORY</span> <span style="color:#e6db74">https://github.com/daniele77/cli.git</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">GIT_TAG</span> <span style="color:#e6db74">v2.1.0</span>
+</span></span><span style="display:flex;"><span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>FetchContent_MakeAvailable(<span style="color:#e6db74">cli</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Link the dependencies to the target
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>target_link_libraries(
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">${</span>PROJECT_NAME<span style="color:#f92672">}</span> <span style="color:#e6db74">PRIVATE</span> <span style="color:#e6db74">cli::cli</span>
+</span></span><span style="display:flex;"><span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Add install target (for &#34;sudo cmake --install .&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>install(<span style="color:#e6db74">TARGETS</span> <span style="color:#f92672">${</span>PROJECT_NAME<span style="color:#f92672">}</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Print the build type
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>message(<span style="color:#e6db74">STATUS</span> <span style="color:#e6db74">&#34;Build type: ${CMAKE_BUILD_TYPE}.&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>Once you run <code>mkdir build &amp;&amp; cd build &amp;&amp; cmake .. &amp;&amp; make -j</code>, the final directory structure will look similar to this.</p>
+<pre tabindex="0"><code>[~/sample-project] $ tree
+.
+├── CMakeLists.txt
+├── build
+│   ├── Makefile
+│   └── sample-project
+├── deps
+│   └── cli-src
+└── src
+    ├── lib.cpp
+    ├── lib.hpp
+    └── main.cpp
+</code></pre><p>That&rsquo;s it.</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>This guide should give you a basic understanding of how to set up a simple CMake project with 3rd party libraries. Don&rsquo;t forget to add <code>build</code> and <code>deps</code> to your <code>.gitignore</code>.</p>
+<pre tabindex="0"><code>/build
+/deps
+</code></pre>
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/S4NKALP" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://gitlab.com/S4NKALP" target="_blank" rel="noopener noreferrer me"
+    title="Gitlab">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0 1 18.6 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.51L23 13.45a.84.84 0 0 1-.35.94z">
+    </path>
+</svg>
+</a>
+<a href="https://www.facebook.com/sankalptharu50028" target="_blank" rel="noopener noreferrer me"
+    title="Facebook">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+</svg>
+</a>
+<a href="mailto:sankaptharu50028@gmail.com" target="_blank" rel="noopener noreferrer me"
+    title="Email">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+    <polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+</a>
+<a href="https://www.reddit.com/user/S4NKALP/" target="_blank" rel="noopener noreferrer me"
+    title="Reddit">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1">
+    <path
+        d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 .97.533 1.811 1.317 2.271-.052.282-.086.567-.086.857 0 3.911 4.808 7.093 10.719 7.093s10.72-3.182 10.72-7.093c0-.274-.029-.544-.075-.81.832-.447 1.405-1.312 1.405-2.318zm-17.224 1.816c0-.868.71-1.575 1.582-1.575.872 0 1.581.707 1.581 1.575s-.709 1.574-1.581 1.574-1.582-.706-1.582-1.574zm9.061 4.669c-.797.793-2.048 1.179-3.824 1.179l-.013-.003-.013.003c-1.777 0-3.028-.386-3.824-1.179-.145-.144-.145-.379 0-.523.145-.145.381-.145.526 0 .65.647 1.729.961 3.298.961l.013.003.013-.003c1.569 0 2.648-.315 3.298-.962.145-.145.381-.144.526 0 .145.145.145.379 0 .524zm-.189-3.095c-.872 0-1.581-.706-1.581-1.574 0-.868.709-1.575 1.581-1.575s1.581.707 1.581 1.575-.709 1.574-1.581 1.574z" />
+</svg>
+</a>
+<a href="https://t.me/sankalp112233" target="_blank" rel="noopener noreferrer me"
+    title="Telegram">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.968.193 1.798.919 2.286 1.61.516 3.275 1.009 4.654 1.472.509 1.793.997 3.592 1.48 5.388.16.36.506.494.864.498l-.002.018s.281.028.555-.038a2.1 2.1 0 0 0 .933-.517c.345-.324 1.28-1.244 1.811-1.764l3.999 2.952.032.018s.442.311 1.09.355c.324.022.75-.04 1.116-.308.37-.27.613-.702.728-1.196.342-1.492 2.61-12.285 2.997-14.072l-.01.042c.27-1.006.17-1.928-.455-2.474a1.654 1.654 0 0 0-1.034-.407z" />
+</svg>
+</a>
+<a href="https://discordapp.com/users/1033402205442670663" target="_blank" rel="noopener noreferrer me"
+    title="Discord">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="20 15 205 190" fill="currentColor" stroke="none">
+    <path
+        d="M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z" />
+    <path
+        d="M189.5 20h-134C44.2 20 35 29.2 35 40.6v135.2c0 11.4 9.2 20.6 20.5 20.6h113.4l-5.3-18.5 12.8 11.9 12.1 11.2 21.5 19V40.6c0-11.4-9.2-20.6-20.5-20.6zm-38.6 130.6s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.9 18.1-11.9-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.2 14.4-58.3 14.4-58.3 14.4-10.8 28.1-10.5 28.1-10.5l1 1.2c-18 5.2-26.3 13.1-26.3 13.1s2.2-1.2 5.9-2.9c10.7-4.7 19.2-6 22.7-6.3.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3 28.1 10.5c0 0 14.4 26.1 14.4 58.3 0 0-8.5 14.5-30.6 15.2z" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2024 Sankalp Tharu.
+        
+    </small>
+</footer><a href="#" title="" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>

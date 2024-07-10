@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hyprland on S4NKALP | Blog</title>
+    <link>http://localhost:1313/tags/hyprland/</link>
+    <description>Recent content in Hyprland on S4NKALP | Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Apr 2024 07:28:13 +0545</lastBuildDate><atom:link href="http://localhost:1313/tags/hyprland/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hyprland Arch Installation Guide 🐧⚙️</title>
+      <link>http://localhost:1313/posts/hyprland-arch-installation-guide/</link>
+      <pubDate>Sun, 28 Apr 2024 07:28:13 +0545</pubDate>
+      
+      <guid>http://localhost:1313/posts/hyprland-arch-installation-guide/</guid>
+      
+      <description>Introduction Welcome to this guide to install HYPRLAND in your Arch Linux.
+Hyprland stands out by fully embracing the Wayland dispaly server protocol, positioning itself as cutting-edge and future-oriented window manager. Through its integration with Wayland, Hyprland guarantees heightened security, seamless graphical performance, and expanded compatibilty with graphics hardware.
+Like many other dynamic tiling windows managers, Hyprland is extremly customizable and highly configurable:
+Here are some examples Please check out also the Hyprland Wiki - Note: To follow this guide, we assume that you already have Arch Linux installed.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

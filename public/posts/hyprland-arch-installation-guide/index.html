@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Hyprland Arch Installation Guide 🐧⚙️ | S4NKALP | Blog</title>
+<meta property="og:title" content="Hyprland Arch Installation Guide 🐧⚙️ | S4NKALP | Blog" />
+<meta name="twitter:title" content="Hyprland Arch Installation Guide 🐧⚙️ | S4NKALP | Blog" />
+<meta itemprop="name" content="Hyprland Arch Installation Guide 🐧⚙️ | S4NKALP | Blog" />
+<meta name="application-name" content="Hyprland Arch Installation Guide 🐧⚙️ | S4NKALP | Blog" />
+<meta property="og:site_name" content="S4NKALP" />
+
+<meta name="description" content="Learn to customize hyprland for an efficient desktop on Arch Linux. This article shows you how to tweak every detail for a perfectly riced workspace.">
+<meta itemprop="description" content="Learn to customize hyprland for an efficient desktop on Arch Linux. This article shows you how to tweak every detail for a perfectly riced workspace." />
+<meta property="og:description" content="Learn to customize hyprland for an efficient desktop on Arch Linux. This article shows you how to tweak every detail for a perfectly riced workspace." />
+<meta name="twitter:description" content="Learn to customize hyprland for an efficient desktop on Arch Linux. This article shows you how to tweak every detail for a perfectly riced workspace." />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en" href="http://localhost:1313/posts/hyprland-arch-installation-guide/" title="" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2024-04-28T00:00:00Z />
+    <meta property="article:published_time" content=2024-04-28T00:00:00Z />
+
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Hyprland Arch Installation Guide 🐧⚙️",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2024-04-28",
+        "description": "Learn to customize hyprland for an efficient desktop on Arch Linux. This article shows you how to tweak every detail for a perfectly riced workspace.",
+        "wordCount":  1361 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2024-04-28",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "S4NKALP | Blog"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.128.2">
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/posts/hyprland-arch-installation-guide/">
+    <link href="/style.min.d43bc6c79baa87f006efb2b92be952faeedeb1a3ab626c1d6abda52eae049355.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    </head>
+<body data-theme = "auto" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title></title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Hyprland Arch Installation Guide 🐧⚙️</h1>
+                
+                
+                <div class="post-meta">
+                    <time datetime="2024-04-28T00:00:00&#43;00:00" itemprop="datePublished"> Apr 28, 2024 </time>
+                </div>
+                
+            </header>
+            
+            <div class="page-content">
+                <h2 id="introduction">Introduction</h2>
+<p>Welcome to this guide to install HYPRLAND in your Arch Linux.</p>
+<p>Hyprland stands out by fully embracing the Wayland dispaly server protocol, positioning itself as cutting-edge  and future-oriented window manager. Through its integration with Wayland, Hyprland guarantees heightened security, seamless graphical performance, and expanded compatibilty with graphics hardware.</p>
+<p>Like many other dynamic tiling windows managers, Hyprland is extremly customizable and highly configurable:</p>
+<ul>
+<li>Here are some <a href="https://hyprland.org/hall_of_fame/">examples</a></li>
+<li>Please check out also the <a href="https://wiki.hyprland.org/">Hyprland Wiki</a></li>
+</ul>
+<p><em>- <strong>Note</strong>: To follow this guide, we assume that you already have Arch Linux installed. If you have not installed it yet, you can refer to the <a href="/posts/arch-installation-guide">Arch Linux Installation Guide</a>.</em></p>
+<h1 id="1-installing-paru-aur-helper">1) Installing paru (Aur helper)</h1>
+<p>Aur Helper is a tool which help you download apps and binaries stored and uploaded in Arch User Repository thus, giving you access to a large in no packages which are not available in official pacman repo’s</p>
+<p>To install these packages, open a terminal and run the following command:</p>
+<pre><code>$ pacman -S --needed base-devel
+$ git clone https://aur.archlinux.org/paru.git
+$ cd paru
+$ makepkg -si
+</code></pre>
+<h1 id="2-installing-hyprland-with-my-scripts">2) Installing Hyprland With My scripts</h1>
+<pre tabindex="0"><code>     $ git clone https://github.com/S4NKALP/hyprland.git
+     $ cd hyprland
+     $ chmod +x setup
+     $ ./setup
+</code></pre><p>Then follow the instructions and the script do its rest of work.</p>
+<pre tabindex="0"><code>[~/dotfiles] $ tree
+
+hypr
+├── assets
+│   ├── bell.png
+│   ├── reload.svg
+│   └── rofi.png
+├── configs
+│   ├── emojis
+│   ├── Keybinds.conf
+│   └── Settings.conf
+├── hypridle.conf
+├── hyprland.conf
+├── hyprlock.conf
+├── initial-boot.sh
+├── scripts
+│   ├── Device_cmd.sh
+│   ├── Music_cmd.sh
+│   ├── Ref.sh
+│   ├── Rofi_cmd.sh
+│   ├── RunCMD.sh
+│   ├── System_cmd.sh
+│   ├── Ui_cmd.sh
+│   └── Xmenu.sh
+└── UserConfigs
+    ├── ENVariables.conf
+    ├── LaptopDisplay.conf
+    ├── Laptops.conf
+    ├── Monitors.conf
+    ├── Startup_Apps.conf
+    ├── UserKeybinds.conf
+    ├── UserSettings.conf
+    └── WindowRules.conf
+</code></pre><h1 id="3-tips-and-tricks">3) Tips and Tricks</h1>
+<h4 id="-common-operation-keys">⌨️ Common Operation Keys</h4>
+<blockquote>
+<blockquote>
+<p>Super = Windows Key</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>
+<p>common operations</p>
+<ul>
+<li>
+<blockquote>
+<p>Super         F1       <em>keyhint</em> (Keyhints)</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Super         Return   <em>term</em> (<code>kitty</code>)</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Super Shift   C        <em>quit</em> (closes (not kills) the active window)</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Super         C        <em>quit</em> (closes a specified window)</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Super         D        <em>show app menu</em> (<code>rofi</code>)</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Super         F        <em>full screen</em></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>applications shortcuts</p>
+<ul>
+<li>
+<blockquote>
+<p>Super         E		  <em>file manager</em> (<code>thunar</code>) - if you chose to install</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>container layout</p>
+<ul>
+<li>
+<blockquote>
+<p>Super          F           <em>toggle tiling/floating mode</em></p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Super  Shift   F           <em>toggle all windows in float mode</em></p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Super  left mouse button   <em>move window</em></p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Super  right mouse button  <em>resize window</em> (note! only in float mode)</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>workspaces</p>
+<ul>
+<li>
+<blockquote>
+<p>Super 1 .. 0         <em>switch to workspace 1 .. 10</em></p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Super Shift 1 .. 0   <em>move (follow) container to workspace 1 .. 10</em></p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Super ALT   1 .. 0   <em>move (silent) container to workspace 1 .. 10</em></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>waybar</p>
+<ul>
+<li>
+<blockquote>
+<p>Alt      W           <em>waybar layout</em> (waybar)</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>refresh waybar, swaync, rofi</p>
+<ul>
+<li>
+<blockquote>
+<p>Super Alt      R     <em>reloads waybar, rofi, swaync</em></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>These are only some. ALl keybinds are located in  <em>~/dotfiles/hypr/configs/Keybinds.conf</em> and <em>~/dotfiles/hypr/UserConfigs/UserKeybinds.conf</em></p>
+</li>
+</ul>
+<h4 id="-wallpaper--styling-stuff">🖼️ wallpaper / styling stuff</h4>
+<ul>
+<li>
+<blockquote>
+<p>Shift    ALT    w       <em>wallpaper shuffle</em> (right click on wallpaper 🖼️  waybar module)</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Super           w       <em>wallpaper select</em> (click on wallpaper waybar  🖼️  module) add more wallpaper in ~/Pictures/wallpapers</p>
+</blockquote>
+</li>
+<li>right click on update   waybar module  <em>wallpaper cycle using swww</em></li>
+<li>scripts for wallpaper stuff are located in <em>~/.config/hypr/scripts/Ui_cmd.sh</em> file names  <code>auto_wall</code> <code>random_wall</code> <code>select_wall</code> funtion (first one for automatic wallpaper changed every 5 mins)</li>
+<li>if your wallpapers are on a different path, edit the scripts above.</li>
+</ul>
+<h4 id="-monitor-executables-keybindings-window-rules">💻 Monitor, executables, keybindings, window rules,</h4>
+<ul>
+<li>files are located in <em>~/.config/hypr/UserConfigs</em> . View with SUPER E</li>
+<li>Keybindings file is located here <em>~/.config/hypr/UserConfigs/UserKeybinds.conf</em></li>
+</ul>
+<h4 id="-taking-screen-shots-you-may-need-to-hold-down-the-function-fn-key-you-can-change-keybinds-in-confighypruserconfigsuserkeybindsconf">🖼️ Taking Screen shots (you may need to hold down the function (<code>fn</code>) key. You can change keybinds in <em>~/.config/hypr/UserConfigs/UserKeybinds.conf</em>)</h4>
+<ul>
+<li>PrintScr(button)             <em>full screenshot</em></li>
+<li>Super           Z            <em>active window screenshot</em></li>
+</ul>
+<h4 id="-clipboard-manager-cliphist">🎗️ clipboard manager (cliphist)</h4>
+<ul>
+<li>Super Alt C   <em>launch the rofi menu of clipboard manager</em>
+<ul>
+<li>
+<blockquote>
+<p>click to select the clipboard. And paste as normal (CTRL V or right click menu)</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>to clean up clipboard manager, launch kitty (super enter) then type <code>cliphist wipe</code></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="-adjusting-fonts-sizes-and-font-scaling-including-waybar-fonts">♨️ Adjusting fonts sizes and font scaling including waybar fonts</h4>
+<ul>
+<li>nwg-look is a very good app. Use it to adjust your own preference.</li>
+<li>for qt-apps, use qt5ct and/or qt6ct</li>
+<li>HiDPI users, I suggest you do the following to have a better appearance.</li>
+<li>
+<blockquote>
+<p>adjust scaling according to your taste by editing ~/.config/hypr/UserConfigs/Monitors.conf</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>adjust font size using nwg-look (GTK Settings)</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>You can tweak the fonts scaling in Font tab in nwg-look</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Lastly, if desired, adjust waybar fonts sizes in ~/dotfiles/waybar/styles.css .</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="-gtk-and-qt-apps-theming">💫 GTK and QT apps theming.</h4>
+<ul>
+<li>For GTK apps theming, use nwg-look (GTK Settings) utility. Its a very powerful gtk utility theming.</li>
+<li>For QT Apps theming, use qt5ct, and/or qt6ct and Kvantum Manager. By default, the qt-theme (set using kvantum), is set to Dracula theme. You can change the qt apps theme using kvantum-manager.</li>
+</ul>
+<h4 id="-waybar-customizations">🎗️ waybar customizations</h4>
+<blockquote>
+<p>[!TIP]
+Rename your waybar configs and styles that you have costumized so it wont be overwritten during upgrade (plan for v2.2.4)</p>
+</blockquote>
+<ul>
+<li>
+<p>waybar font too big or too small. Edit the font-size in waybar styles located in ~/dotfiles//waybar/styles.css . By default, it is set to 97%. After adjusting the GTK font scaling to your liking, edit all the waybar styles. Reduce or increase according to your needs. NOTE that its on percent %. You can also change to px whichever suits you. Note: This corresponds well with nwg-look (GTK Settings). So suggest to adjust first your font settings using nwg-look. And then adjust the waybar.</p>
+</li>
+<li>
+<p>if you want 12h format instead of 24H format, edit the ~/.config/waybar/modules look for clock. for 12h format, should be like %I:%M%P; for 24H format, %H:%M:%S.. ensure to disable one format by adding // before that line. For clock formatting, you can use website: <a href="https://help.gnome.org/users/gthumb/stable/gthumb-date-formats.html.en">https://help.gnome.org/users/gthumb/stable/gthumb-date-formats.html.en</a></p>
+</li>
+<li>
+<p>CPU Temperature:</p>
+<ul>
+<li>to change from deg C to deg F , edit the ~/.config/waybar/modules look for &ldquo;temperature&rdquo;. Change the format to &ldquo;format&rdquo;: &ldquo;{temperatureF}°F {icon}&rdquo;,</li>
+<li>to fix the temperature if not showing correctly, edit the hwmon-path accordingly.</li>
+<li>use this function to easily identify the hwmon path
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in /sys/class/hwmon/hwmon*/temp*_input; <span style="color:#66d9ef">do</span> echo <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>&lt;<span style="color:#66d9ef">$(</span>dirname $i<span style="color:#66d9ef">)</span>/name<span style="color:#66d9ef">)</span><span style="color:#e6db74">: </span><span style="color:#66d9ef">$(</span>cat <span style="color:#e6db74">${</span>i%_*<span style="color:#e6db74">}</span>_label 2&gt;/dev/null <span style="color:#f92672">||</span> echo <span style="color:#66d9ef">$(</span>basename <span style="color:#e6db74">${</span>i%_*<span style="color:#e6db74">}</span><span style="color:#66d9ef">))</span><span style="color:#e6db74"> </span><span style="color:#66d9ef">$(</span>readlink -f $i<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">done</span>
+</span></span></code></pre></div></li>
+<li>look for <code>K10temp</code> for AMD CPU and <code>coretemp</code> for Intel CPU&rsquo;s</li>
+</ul>
+</li>
+<li>
+<p>For weather, edit the weather module located in  ~/.config/waybar/modules(change to your location)</p>
+</li>
+<li>
+<p>plenty waybar hyprland/workspaces to choose from. Circle, Roman Number, pacman, and workspace number and icons. Just assign accordingly on waybar configs. Check <code>~/.config/waybar/modules</code> for their modules names</p>
+</li>
+<li>
+<p>Regarding the waybar keyboard module, If you want to add in different waybar layout, the module name is custom/keyboard. Kindly NOTE that this will read your kb_layout in your Settings.conf. to change kb_layout, add in your Settings.conf &hellip;. i.e. kb_layout=us,es,ru and then refresh waybar (SUPER ALT R), then you can change keyboard by left clicking the keyboard module.</p>
+</li>
+<li>
+<p>unwanted waybar module:</p>
+<ul>
+<li>Simplest is to edit <code>~/.config/waybar/modules</code> . Put // before or delete that module.</li>
+<li>Or you dont really need to worry about since the modules not defined on waybar configs are not loaded.</li>
+</ul>
+</li>
+</ul>
+<h4 id="-hyprland-configurations">🎗️ Hyprland configurations</h4>
+<ul>
+<li><em>Hyprland</em> configuration files are in <code>~/.config/hypr/UserConfigs</code> with some settings <code>~/.config/hypr/configs</code> in  Can view using ALT E (by default, will be opened with nano. You can edit default editor by editing <code>~/.config/hypr/scripts/Rofi_cmd.sh</code>(edit function)</li>
+<li>In Generaral, costumize your own dots in <code>~/.config/hypr/UserConfigs</code></li>
+<li>files located in this folder can be edited using editor of your choice.</li>
+</ul>
+<h4 id="-notes-for-nvidia-gpu-users">🧲 notes for nvidia gpu users</h4>
+<ul>
+<li>Do note that you need to enable or disable some items in ENVariables.conf file located in <code>~/.config/hypr/UserConfigs/ENVariables.conf</code></li>
+<li>a guide on wiki - <a href="https://wiki.hyprland.org/Nvidia/">https://wiki.hyprland.org/Nvidia/</a></li>
+</ul>
+<h4 id="-swaync">🔔 SwayNC</h4>
+<ul>
+<li>if you only want to use notification part of swayNC, edit ~/dotfiles/swaync/config.json</li>
+<li>look at the widgets part. you can disable by putting /* <!-- raw HTML omitted --> <em>/ i.e. /</em>&ldquo;buttons-grid&rdquo;,*/ or delete that line. Then you can refresh with <code>SUPER ALT R</code></li>
+</ul>
+<h4 id="-other-notes">🎗️ other notes</h4>
+<ul>
+<li><em>Multimedia keys</em> - may not work for every keyboard may need to hold down the function (<code>fn</code>) key</li>
+<li>Follow the wiki - <a href="https://wiki.hyprland.org/">https://wiki.hyprland.org/</a></li>
+<li>Follow the github - <a href="https://github.com/hyprwm/Hyprland">https://github.com/hyprwm/Hyprland</a></li>
+</ul>
+<h4 id="-hidden-features">🎗️ HIDDEN FEATURES!</h4>
+<ul>
+<li>ONLINE Music ( ALT M) (note: you may need to install yt-dlp or youtube-dl). You can edit the links of your choice. Script is located in <code>~/.config/hypr/scripts/Music_cmd.sh</code> .</li>
+<li>EMOTICONS (SUPER .) - useful for chats or messages ). Click to copy and CTRL V to paste</li>
+</ul>
+<h4 id="-reducing-cpu-usages--battery-saving">💡 Reducing cpu usages / Battery saving</h4>
+<ul>
+<li>Hyprland has a nice animation but it cost cpu and gpu usages including ram usages.</li>
+<li>On this dotfiles, you disable the borderangle animation in Hyprland settings under animations.</li>
+<li>You can also disable blur, reduce the shadow</li>
+<li>You can also refer to <a href="https://wiki.hyprland.org/hyprland-wiki/pages/FAQ/#how-do-i-make-hyprland-draw-as-little-power-as-possible-on-my-laptop"><code>Hyprland Wiki</code></a></li>
+</ul>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/S4NKALP" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://gitlab.com/S4NKALP" target="_blank" rel="noopener noreferrer me"
+    title="Gitlab">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0 1 18.6 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.51L23 13.45a.84.84 0 0 1-.35.94z">
+    </path>
+</svg>
+</a>
+<a href="https://www.facebook.com/sankalptharu50028" target="_blank" rel="noopener noreferrer me"
+    title="Facebook">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+</svg>
+</a>
+<a href="mailto:sankaptharu50028@gmail.com" target="_blank" rel="noopener noreferrer me"
+    title="Email">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+    <polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+</a>
+<a href="https://www.reddit.com/user/S4NKALP/" target="_blank" rel="noopener noreferrer me"
+    title="Reddit">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1">
+    <path
+        d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 .97.533 1.811 1.317 2.271-.052.282-.086.567-.086.857 0 3.911 4.808 7.093 10.719 7.093s10.72-3.182 10.72-7.093c0-.274-.029-.544-.075-.81.832-.447 1.405-1.312 1.405-2.318zm-17.224 1.816c0-.868.71-1.575 1.582-1.575.872 0 1.581.707 1.581 1.575s-.709 1.574-1.581 1.574-1.582-.706-1.582-1.574zm9.061 4.669c-.797.793-2.048 1.179-3.824 1.179l-.013-.003-.013.003c-1.777 0-3.028-.386-3.824-1.179-.145-.144-.145-.379 0-.523.145-.145.381-.145.526 0 .65.647 1.729.961 3.298.961l.013.003.013-.003c1.569 0 2.648-.315 3.298-.962.145-.145.381-.144.526 0 .145.145.145.379 0 .524zm-.189-3.095c-.872 0-1.581-.706-1.581-1.574 0-.868.709-1.575 1.581-1.575s1.581.707 1.581 1.575-.709 1.574-1.581 1.574z" />
+</svg>
+</a>
+<a href="https://t.me/sankalp112233" target="_blank" rel="noopener noreferrer me"
+    title="Telegram">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.968.193 1.798.919 2.286 1.61.516 3.275 1.009 4.654 1.472.509 1.793.997 3.592 1.48 5.388.16.36.506.494.864.498l-.002.018s.281.028.555-.038a2.1 2.1 0 0 0 .933-.517c.345-.324 1.28-1.244 1.811-1.764l3.999 2.952.032.018s.442.311 1.09.355c.324.022.75-.04 1.116-.308.37-.27.613-.702.728-1.196.342-1.492 2.61-12.285 2.997-14.072l-.01.042c.27-1.006.17-1.928-.455-2.474a1.654 1.654 0 0 0-1.034-.407z" />
+</svg>
+</a>
+<a href="https://discordapp.com/users/1033402205442670663" target="_blank" rel="noopener noreferrer me"
+    title="Discord">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="20 15 205 190" fill="currentColor" stroke="none">
+    <path
+        d="M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z" />
+    <path
+        d="M189.5 20h-134C44.2 20 35 29.2 35 40.6v135.2c0 11.4 9.2 20.6 20.5 20.6h113.4l-5.3-18.5 12.8 11.9 12.1 11.2 21.5 19V40.6c0-11.4-9.2-20.6-20.5-20.6zm-38.6 130.6s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.9 18.1-11.9-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.2 14.4-58.3 14.4-58.3 14.4-10.8 28.1-10.5 28.1-10.5l1 1.2c-18 5.2-26.3 13.1-26.3 13.1s2.2-1.2 5.9-2.9c10.7-4.7 19.2-6 22.7-6.3.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3 28.1 10.5c0 0 14.4 26.1 14.4 58.3 0 0-8.5 14.5-30.6 15.2z" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2024 Sankalp Tharu.
+        
+    </small>
+</footer><a href="#" title="" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>

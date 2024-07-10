@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on S4NKALP | Blog</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on S4NKALP | Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to download view only protected PDF form Google Drive (JS Code)</title>
+      <link>http://localhost:1313/posts/download_view_only_protected_pdf_from_google_drive/</link>
+      <pubDate>Wed, 10 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/download_view_only_protected_pdf_from_google_drive/</guid>
+      
+      <description>Download view only protected PDF form Google Drive(JS Code) Here you can use this script to download view only pdf file from Google Drive. This script works like a screenshot capturing all pdf pages to bulk of images with better resolution quality and combine it all into one pdf file. Note 1: It was tested on Chrome Browser, Firefox.
+Note 2: If you’re getting only part of the document visible, try zooming out your browser and then run the script.</description>
+      
+    </item>
+    
+    <item>
+      <title>Install Flutter in Linux without Android Studio</title>
+      <link>http://localhost:1313/posts/flutter_in_archlinux/</link>
+      <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/flutter_in_archlinux/</guid>
+      
+      <description>INSTALL FLUTTER WITHOUT ANDROID STUDIO ON LINUX sudo pacman -S jdk17-openjdk sudo pacman -S git cd ~/ mkdir Android cd Android mkdir cmdline-tools Download Flutter
+Go to the folder where you downloaded the zip file and unzip the file. You can unzip it by right click on the file and click on extract here or using the terminal by the following code
+unzip flutter_linux_3.3.10-stable.tar.xz Now move the “flutter” folder to the “Home/Android/” directory</description>
+      
+    </item>
+    
+    <item>
+      <title>Planning To Go Abroad?</title>
+      <link>http://localhost:1313/posts/planning-go-abroad/</link>
+      <pubDate>Tue, 07 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/planning-go-abroad/</guid>
+      
+      <description>Are you planning to go abroad? Beware of these scams!! Source : Reddit
+There are common scams running in Nepal for those going abroad. All done through informal channel so take these information to be aware.
+Females goes on dependent with Male as Student: Women got together with male in abroad with a promise to work and pay the men&amp;rsquo;s uni fee. In the middle of the study they file divorce.</description>
+      
+    </item>
+    
+    <item>
+      <title>Add Numbers Without Arthemetic 🙅‍♂️➕</title>
+      <link>http://localhost:1313/posts/add-numbers-without-arthemetic/</link>
+      <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/add-numbers-without-arthemetic/</guid>
+      
+      <description>What if you are given a problem where you have to add two integers but you can&amp;rsquo;t use any arithmetic operators (+ - * / % // **), like LeetCode&amp;rsquo;s problem #371.
+So how do you approach this problem? Answer: Bit manipulation
+Problems like this can be solved using bit-wise operators as basic mathematics rules work in the same way whether it be binary or decimal. All we have to do is:</description>
+      
+    </item>
+    
+    <item>
+      <title>Arch Installation Guide 🐧❤️</title>
+      <link>http://localhost:1313/posts/arch-installation-guide/</link>
+      <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/arch-installation-guide/</guid>
+      
+      <description>Introduction Welcome to this guide to install Arch Linux on your computer. This guide is rooted in the official Arch Linux Wiki to ensure that you’re receiving accurate and up-to-date information. For further information and support, the official Arch Linux forum is an invaluable resource. Here, you’ll find the official Installation Guide, along with a wealth of knowledge from the Arch Linux community.
+In addition to the standard procedures, this guide adds different commands and strategies designed to make the installation process faster and easier whether you are an experienced Linux user or a newcomer to the world of open source operating systems.</description>
+      
+    </item>
+    
+    <item>
+      <title>Dark Mode Across Chrome 🌚😎</title>
+      <link>http://localhost:1313/posts/chrome-dark-mode/</link>
+      <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/chrome-dark-mode/</guid>
+      
+      <description>There are lots of extensions out there that turn your web browsing experience much better if you prefer dark backgrounds (who doesn&amp;rsquo;t right?).
+My favourite one is Dark Reader but there&amp;rsquo;s just one problem, mobile versions of chrome don&amp;rsquo;t support extensions.
+This trick will help you turn on dark mode everywhere.
+Steps:
+Visit Chrome flags by entering chrome://flags/ into the address bar.
+Search for dark in the flags search bar.</description>
+      
+    </item>
+    
+    <item>
+      <title>How to be a good open source ‍🧑‍💻🌏</title>
+      <link>http://localhost:1313/posts/how-to-be-a-good-open-source/</link>
+      <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/how-to-be-a-good-open-source/</guid>
+      
+      <description>What&amp;rsquo;s the coolest thing about open source software? 💭 If you need a new feature, you can just go ahead and add it yourself! Here are some tips I learned along the way:
+Add Value Make sure your contribution adds value to the project. Don&amp;rsquo;t just contribute because it&amp;rsquo;s trendy.
+Ask for Help Don&amp;rsquo;t expect to get everything right on the first try. Ask the project maintainers for feedback and guidance.</description>
+      
+    </item>
+    
+    <item>
+      <title>Hyprland Arch Installation Guide 🐧⚙️</title>
+      <link>http://localhost:1313/posts/hyprland-arch-installation-guide/</link>
+      <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/hyprland-arch-installation-guide/</guid>
+      
+      <description>Introduction Welcome to this guide to install HYPRLAND in your Arch Linux.
+Hyprland stands out by fully embracing the Wayland dispaly server protocol, positioning itself as cutting-edge and future-oriented window manager. Through its integration with Wayland, Hyprland guarantees heightened security, seamless graphical performance, and expanded compatibilty with graphics hardware.
+Like many other dynamic tiling windows managers, Hyprland is extremly customizable and highly configurable:
+Here are some examples Please check out also the Hyprland Wiki - Note: To follow this guide, we assume that you already have Arch Linux installed.</description>
+      
+    </item>
+    
+    <item>
+      <title>Introduction to Algorithms and Programming 👨‍💻➕</title>
+      <link>http://localhost:1313/posts/algorithms-and-programming/</link>
+      <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/algorithms-and-programming/</guid>
+      
+      <description>What is an Algorithm and how does it differ from a Program? An algorithm is a set of step-by-step instructions that define how a task should be performed. In programming, algorithms are fundamental as they define the logic that computers must follow to solve specific problems.
+A program is the implementation of one or more algorithms in a specific programming language. While an algorithm can be represented in many ways, a program is a concrete artifact that can be executed by a computer.</description>
+      
+    </item>
+    
+    <item>
+      <title>Simple Python App Setup 👨‍💻&lt;/&gt;</title>
+      <link>http://localhost:1313/posts/simple-python-setup/</link>
+      <pubDate>Wed, 24 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/simple-python-setup/</guid>
+      
+      <description>Introduction Many tutorials show you how to create a basic Python app with a couple of modules, but they rarely explain how to set up a whole project.
+This guide will show you how to set up a simple Python project with automated testing and a virtual environment for 3rd party packages. I have based it on Dead Simple Python: Project Structure and Imports by Jason C. McDonald with some opinionated changes.</description>
+      
+    </item>
+    
+    <item>
+      <title>Simple C&#43;&#43; App Setup (CMake) 👨‍💻C&#43;&#43;</title>
+      <link>http://localhost:1313/posts/simple-cmake-setup/</link>
+      <pubDate>Fri, 19 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/simple-cmake-setup/</guid>
+      
+      <description>Introduction One of the most daunting things about CMake is that every tutorial assumes that you have multiple libraries and executables to build.
+But what if you&amp;rsquo;re just starting out and don&amp;rsquo;t know what you&amp;rsquo;re doing? This guide is for you.
+This guide has been tested on GNU/Linux.
+Setup Download CMake First, you need to install CMake.On Linux (Arch Linux)
+sudo pacman -S cmake Then, ensure it&amp;rsquo;s installed by running:</description>
+      
+    </item>
+    
+  </channel>
+</rss>
