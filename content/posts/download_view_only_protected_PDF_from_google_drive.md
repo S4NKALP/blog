@@ -11,9 +11,8 @@ showTableOfContents = true
 
 ###### Here you can use this script to download view only pdf file from Google Drive. This script works like a screenshot capturing all pdf pages to bulk of images with better resolution quality and combine it all into one pdf file.
 Note 1: It was tested on Chrome Browser, Firefox.
-<br>
+
 Note 2: If you’re getting only part of the document visible, try zooming out your browser and then run the script.
-<br>
 
 
 #### Instruction:
