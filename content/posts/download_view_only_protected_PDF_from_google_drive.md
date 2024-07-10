@@ -22,7 +22,7 @@ Note 2: If you’re getting only part of the document visible, try zooming out y
 4. Open Developer Tools on separate window and choose the Console tab
 5. Type allow pasting
 6. Then Paste the code from below and remove allow pasting from the console (and run the script)
-
+### Use one script only
 ```js
 
 // Create a script element to load the jsPDF library
@@ -66,7 +66,7 @@ jspdf.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js';
 document.body.appendChild(jspdf);
 
 ```
-<h5 style="text-align:center">OR</h5>
+#### OR
 
 ```js
 (function () {
@@ -175,7 +175,7 @@ document.body.appendChild(jspdf);
   document.body.appendChild(script);
 })();
 ```
-<h5 style="text-align:center">OR</h5>
+#### OR
 
 ```js
 // Define the base name for the PDF document.
@@ -283,7 +283,7 @@ function autoScrollAndGeneratePDF() {
 // Start the process.
 autoScrollAndGeneratePDF();
 ```
-<h5 style="text-align:center">OR</h5>
+#### OR
 
 ```js
 // Function to dynamically load the jsPDF library and execute a callback function once it's loaded
