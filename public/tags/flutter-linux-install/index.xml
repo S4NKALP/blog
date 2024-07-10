@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Flutter, Linux, Install on S4NKALP | Blog</title>
-    <link>http://localhost:1313/tags/flutter-linux-install/</link>
-    <description>Recent content in Flutter, Linux, Install on S4NKALP | Blog</description>
+    <title>Flutter, Linux, Install on S4NKALP</title>
+    <link>http://localhost:1313/public/index.html/tags/flutter-linux-install/</link>
+    <description>Recent content in Flutter, Linux, Install on S4NKALP</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 08 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/flutter-linux-install/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/public/index.html/tags/flutter-linux-install/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Install Flutter in Linux without Android Studio</title>
-      <link>http://localhost:1313/posts/flutter_in_archlinux/</link>
+      <link>http://localhost:1313/public/index.html/posts/flutter_in_archlinux/</link>
       <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/flutter_in_archlinux/</guid>
+      <guid>http://localhost:1313/public/index.html/posts/flutter_in_archlinux/</guid>
       
       <description>INSTALL FLUTTER WITHOUT ANDROID STUDIO ON LINUX sudo pacman -S jdk17-openjdk sudo pacman -S git cd ~/ mkdir Android cd Android mkdir cmdline-tools Download Flutter
 Go to the folder where you downloaded the zip file and unzip the file. You can unzip it by right click on the file and click on extract here or using the terminal by the following code

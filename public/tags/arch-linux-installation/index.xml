@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Arch, Linux, Installation on S4NKALP | Blog</title>
-    <link>http://localhost:1313/tags/arch-linux-installation/</link>
-    <description>Recent content in Arch, Linux, Installation on S4NKALP | Blog</description>
+    <title>Arch, Linux, Installation on S4NKALP</title>
+    <link>http://localhost:1313/public/index.html/tags/arch-linux-installation/</link>
+    <description>Recent content in Arch, Linux, Installation on S4NKALP</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/arch-linux-installation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/public/index.html/tags/arch-linux-installation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Arch Installation Guide 🐧❤️</title>
-      <link>http://localhost:1313/posts/arch-installation-guide/</link>
+      <link>http://localhost:1313/public/index.html/posts/arch-installation-guide/</link>
       <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/arch-installation-guide/</guid>
+      <guid>http://localhost:1313/public/index.html/posts/arch-installation-guide/</guid>
       
       <description>Introduction Welcome to this guide to install Arch Linux on your computer. This guide is rooted in the official Arch Linux Wiki to ensure that you’re receiving accurate and up-to-date information. For further information and support, the official Arch Linux forum is an invaluable resource. Here, you’ll find the official Installation Guide, along with a wealth of knowledge from the Arch Linux community.
 In addition to the standard procedures, this guide adds different commands and strategies designed to make the installation process faster and easier whether you are an experienced Linux user or a newcomer to the world of open source operating systems.</description>

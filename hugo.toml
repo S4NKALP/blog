@@ -1,5 +1,5 @@
-baseURL = 'https://example.org/'
-title = 'S4NKALP | Blog'
+baseURL = 'https://s4nkalp.github.io/public/index.html'
+title = 'S4NKALP'
 theme = "hugo-blog-awesome"
 languageCode = 'en-us'
 enableEmoji = true

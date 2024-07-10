@@ -2,84 +2,84 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://localhost:1313/public/index.html/</loc>
     <lastmod>2024-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/download_view_only_protected_pdf_from_google_drive/</loc>
+    <loc>http://localhost:1313/public/index.html/posts/download_view_only_protected_pdf_from_google_drive/</loc>
     <lastmod>2024-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/pdf_download-protected_pdf-view-only-pdf-pdf_viewer/</loc>
+    <loc>http://localhost:1313/public/index.html/tags/pdf_download-protected_pdf-view-only-pdf-pdf_viewer/</loc>
     <lastmod>2024-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>http://localhost:1313/public/index.html/posts/</loc>
     <lastmod>2024-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://localhost:1313/public/index.html/tags/</loc>
     <lastmod>2024-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/flutter-linux-install/</loc>
+    <loc>http://localhost:1313/public/index.html/tags/flutter-linux-install/</loc>
     <lastmod>2024-06-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/flutter_in_archlinux/</loc>
+    <loc>http://localhost:1313/public/index.html/posts/flutter_in_archlinux/</loc>
     <lastmod>2024-06-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/dependent-abroad-nepal-scams/</loc>
+    <loc>http://localhost:1313/public/index.html/tags/dependent-abroad-nepal-scams/</loc>
     <lastmod>2024-05-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/planning-go-abroad/</loc>
+    <loc>http://localhost:1313/public/index.html/posts/planning-go-abroad/</loc>
     <lastmod>2024-05-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/add-numbers-without-arthemetic/</loc>
+    <loc>http://localhost:1313/public/index.html/posts/add-numbers-without-arthemetic/</loc>
     <lastmod>2024-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/algorithms-programming-introduction/</loc>
+    <loc>http://localhost:1313/public/index.html/tags/algorithms-programming-introduction/</loc>
     <lastmod>2024-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/arch-installation-guide/</loc>
+    <loc>http://localhost:1313/public/index.html/posts/arch-installation-guide/</loc>
     <lastmod>2024-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/arch-hyprland-customization-linux/</loc>
+    <loc>http://localhost:1313/public/index.html/tags/arch-hyprland-customization-linux/</loc>
     <lastmod>2024-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/arch-linux-installation/</loc>
+    <loc>http://localhost:1313/public/index.html/tags/arch-linux-installation/</loc>
     <lastmod>2024-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/chrome-dark-mode/</loc>
+    <loc>http://localhost:1313/public/index.html/posts/chrome-dark-mode/</loc>
     <lastmod>2024-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hacks-browser/</loc>
+    <loc>http://localhost:1313/public/index.html/tags/hacks-browser/</loc>
     <lastmod>2024-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/how-to-be-a-good-open-source/</loc>
+    <loc>http://localhost:1313/public/index.html/posts/how-to-be-a-good-open-source/</loc>
     <lastmod>2024-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hyprland-arch-installation-guide/</loc>
+    <loc>http://localhost:1313/public/index.html/posts/hyprland-arch-installation-guide/</loc>
     <lastmod>2024-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/algorithms-and-programming/</loc>
+    <loc>http://localhost:1313/public/index.html/posts/algorithms-and-programming/</loc>
     <lastmod>2024-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/leetcode-problem-solving-programming/</loc>
+    <loc>http://localhost:1313/public/index.html/tags/leetcode-problem-solving-programming/</loc>
     <lastmod>2024-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/open-source-github-contribution/</loc>
+    <loc>http://localhost:1313/public/index.html/tags/open-source-github-contribution/</loc>
     <lastmod>2024-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/simple-python-setup/</loc>
+    <loc>http://localhost:1313/public/index.html/posts/simple-python-setup/</loc>
     <lastmod>2024-04-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tutorial-python-macos-linux/</loc>
+    <loc>http://localhost:1313/public/index.html/tags/tutorial-python-macos-linux/</loc>
     <lastmod>2024-04-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/simple-cmake-setup/</loc>
+    <loc>http://localhost:1313/public/index.html/posts/simple-cmake-setup/</loc>
     <lastmod>2024-04-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tutorial-cmake-c&#43;&#43;-macos-linux/</loc>
+    <loc>http://localhost:1313/public/index.html/tags/tutorial-cmake-c&#43;&#43;-macos-linux/</loc>
     <lastmod>2024-04-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>http://localhost:1313/public/index.html/about/</loc>
     <lastmod>2023-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://localhost:1313/public/index.html/categories/</loc>
   </url>
 </urlset>
