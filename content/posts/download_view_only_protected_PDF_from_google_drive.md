@@ -19,8 +19,7 @@ Note 2: If you’re getting only part of the document visible, try zooming out y
 2. Click Preview
 3. Scroll to the bottom of the document, so all the pages are present
 4. Open Developer Tools on separate window and choose the Console tab
-5. Type allow pasting
-6. Then Paste the code from below and remove allow pasting from the console (and run the script)
+5. Then Paste the code from below and remove allow pasting from the console (and run the script)
 ### Use one script only
 ```js
 
@@ -405,8 +404,8 @@ function processAndGeneratePDF() {
 // Start the entire process by loading the jsPDF library and then executing the main function once it's loaded
 loadJsPDF(processAndGeneratePDF);
 ```
-7. Wait script processing and downloading pdf file
-8. Fast or slow pdf processing based on the pdf content itself.
-9. Enjoy...
+6. Wait script processing and downloading pdf file
+7. Fast or slow pdf processing based on the pdf content itself.
+8. Enjoy...
 
 
