@@ -9,7 +9,7 @@ showTableOfContents = true
 
 ## Download view only protected PDF form Google Drive(JS Code)
 
-###### Here you can use this script to download view only pdf file from Google Drive. This script works like a screenshot capturing all pdf pages to bulk of images with better resolution quality and combine it all into one pdf file.
+#### Here you can use this script to download view only pdf file from Google Drive. This script works like a screenshot capturing all pdf pages to bulk of images with better resolution quality and combine it all into one pdf file.
 Note 1: It was tested on Chrome Browser, Firefox.
 
 Note 2: If you’re getting only part of the document visible, try zooming out your browser and then run the script.
