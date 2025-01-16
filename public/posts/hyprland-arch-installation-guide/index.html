@@ -47,7 +47,7 @@
         },
         "datePublished": "2024-04-28",
         "description": "Learn to customize hyprland for an efficient desktop on Arch Linux. This article shows you how to tweak every detail for a perfectly riced workspace.",
-        "wordCount":  1361 ,
+        "wordCount":  648 ,
         "mainEntityOfPage": "True",
         "dateModified": "2024-04-28",
         "image": {
@@ -62,7 +62,7 @@
     </script>
 
 
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="generator" content="Hugo 0.133.0">
 
     
 
@@ -196,9 +196,7 @@ hypr
 ├── assets
 │   ├── bell.png
 │   ├── reload.svg
-│   └── rofi.png
 ├── configs
-│   ├── emojis
 │   ├── Keybinds.conf
 │   └── Settings.conf
 ├── hypridle.conf
@@ -206,14 +204,11 @@ hypr
 ├── hyprlock.conf
 ├── initial-boot.sh
 ├── scripts
-│   ├── Device_cmd.sh
-│   ├── Music_cmd.sh
-│   ├── Ref.sh
-│   ├── Rofi_cmd.sh
+│   ├── Polkit.sh
 │   ├── RunCMD.sh
-│   ├── System_cmd.sh
+│   ├── ScreenShot.sh
 │   ├── Ui_cmd.sh
-│   └── Xmenu.sh
+│   └── wallpaper.py
 └── UserConfigs
     ├── ENVariables.conf
     ├── LaptopDisplay.conf
@@ -236,7 +231,7 @@ hypr
 <ul>
 <li>
 <blockquote>
-<p>Super         F1       <em>keyhint</em> (Keyhints)</p>
+<p>Super         F1       <em>cheatsheet</em></p>
 </blockquote>
 </li>
 <li>
@@ -256,7 +251,7 @@ hypr
 </li>
 <li>
 <blockquote>
-<p>Super         D        <em>show app menu</em> (<code>rofi</code>)</p>
+<p>Super         D        <em>show app menu</em> (<code>ags</code>)</p>
 </blockquote>
 </li>
 <li>
@@ -271,7 +266,7 @@ hypr
 <ul>
 <li>
 <blockquote>
-<p>Super         E		  <em>file manager</em> (<code>thunar</code>) - if you chose to install</p>
+<p>Super         E         <em>file manager</em> (<code>thunar</code>) - if you chose to install</p>
 </blockquote>
 </li>
 </ul>
@@ -322,26 +317,6 @@ hypr
 </ul>
 </li>
 <li>
-<p>waybar</p>
-<ul>
-<li>
-<blockquote>
-<p>Alt      W           <em>waybar layout</em> (waybar)</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li>
-<p>refresh waybar, swaync, rofi</p>
-<ul>
-<li>
-<blockquote>
-<p>Super Alt      R     <em>reloads waybar, rofi, swaync</em></p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li>
 <p>These are only some. ALl keybinds are located in  <em>~/dotfiles/hypr/configs/Keybinds.conf</em> and <em>~/dotfiles/hypr/UserConfigs/UserKeybinds.conf</em></p>
 </li>
 </ul>
@@ -349,22 +324,14 @@ hypr
 <ul>
 <li>
 <blockquote>
-<p>Shift    ALT    w       <em>wallpaper shuffle</em> (right click on wallpaper 🖼️  waybar module)</p>
+<p>Shift    ALT    w       <em>wallpaper shuffle</em></p>
 </blockquote>
 </li>
 <li>
 <blockquote>
-<p>Super           w       <em>wallpaper select</em> (click on wallpaper waybar  🖼️  module) add more wallpaper in ~/Pictures/wallpapers</p>
+<p>Super           w       <em>wallpaper select</em></p>
 </blockquote>
 </li>
-<li>right click on update   waybar module  <em>wallpaper cycle using swww</em></li>
-<li>scripts for wallpaper stuff are located in <em>~/.config/hypr/scripts/Ui_cmd.sh</em> file names  <code>auto_wall</code> <code>random_wall</code> <code>select_wall</code> funtion (first one for automatic wallpaper changed every 5 mins)</li>
-<li>if your wallpapers are on a different path, edit the scripts above.</li>
-</ul>
-<h4 id="-monitor-executables-keybindings-window-rules">💻 Monitor, executables, keybindings, window rules,</h4>
-<ul>
-<li>files are located in <em>~/.config/hypr/UserConfigs</em> . View with SUPER E</li>
-<li>Keybindings file is located here <em>~/.config/hypr/UserConfigs/UserKeybinds.conf</em></li>
 </ul>
 <h4 id="-taking-screen-shots-you-may-need-to-hold-down-the-function-fn-key-you-can-change-keybinds-in-confighypruserconfigsuserkeybindsconf">🖼️ Taking Screen shots (you may need to hold down the function (<code>fn</code>) key. You can change keybinds in <em>~/.config/hypr/UserConfigs/UserKeybinds.conf</em>)</h4>
 <ul>
@@ -373,25 +340,11 @@ hypr
 </ul>
 <h4 id="-clipboard-manager-cliphist">🎗️ clipboard manager (cliphist)</h4>
 <ul>
-<li>Super Alt C   <em>launch the rofi menu of clipboard manager</em>
-<ul>
-<li>
-<blockquote>
-<p>click to select the clipboard. And paste as normal (CTRL V or right click menu)</p>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<p>to clean up clipboard manager, launch kitty (super enter) then type <code>cliphist wipe</code></p>
-</blockquote>
-</li>
-</ul>
-</li>
+<li>Super Alt C   <em>launch clipboard manager</em></li>
 </ul>
 <h4 id="-adjusting-fonts-sizes-and-font-scaling-including-waybar-fonts">♨️ Adjusting fonts sizes and font scaling including waybar fonts</h4>
 <ul>
 <li>nwg-look is a very good app. Use it to adjust your own preference.</li>
-<li>for qt-apps, use qt5ct and/or qt6ct</li>
 <li>HiDPI users, I suggest you do the following to have a better appearance.</li>
 <li>
 <blockquote>
@@ -408,56 +361,6 @@ hypr
 <p>You can tweak the fonts scaling in Font tab in nwg-look</p>
 </blockquote>
 </li>
-<li>
-<blockquote>
-<p>Lastly, if desired, adjust waybar fonts sizes in ~/dotfiles/waybar/styles.css .</p>
-</blockquote>
-</li>
-</ul>
-<h4 id="-gtk-and-qt-apps-theming">💫 GTK and QT apps theming.</h4>
-<ul>
-<li>For GTK apps theming, use nwg-look (GTK Settings) utility. Its a very powerful gtk utility theming.</li>
-<li>For QT Apps theming, use qt5ct, and/or qt6ct and Kvantum Manager. By default, the qt-theme (set using kvantum), is set to Dracula theme. You can change the qt apps theme using kvantum-manager.</li>
-</ul>
-<h4 id="-waybar-customizations">🎗️ waybar customizations</h4>
-<blockquote>
-<p>[!TIP]
-Rename your waybar configs and styles that you have costumized so it wont be overwritten during upgrade (plan for v2.2.4)</p>
-</blockquote>
-<ul>
-<li>
-<p>waybar font too big or too small. Edit the font-size in waybar styles located in ~/dotfiles//waybar/styles.css . By default, it is set to 97%. After adjusting the GTK font scaling to your liking, edit all the waybar styles. Reduce or increase according to your needs. NOTE that its on percent %. You can also change to px whichever suits you. Note: This corresponds well with nwg-look (GTK Settings). So suggest to adjust first your font settings using nwg-look. And then adjust the waybar.</p>
-</li>
-<li>
-<p>if you want 12h format instead of 24H format, edit the ~/.config/waybar/modules look for clock. for 12h format, should be like %I:%M%P; for 24H format, %H:%M:%S.. ensure to disable one format by adding // before that line. For clock formatting, you can use website: <a href="https://help.gnome.org/users/gthumb/stable/gthumb-date-formats.html.en">https://help.gnome.org/users/gthumb/stable/gthumb-date-formats.html.en</a></p>
-</li>
-<li>
-<p>CPU Temperature:</p>
-<ul>
-<li>to change from deg C to deg F , edit the ~/.config/waybar/modules look for &ldquo;temperature&rdquo;. Change the format to &ldquo;format&rdquo;: &ldquo;{temperatureF}°F {icon}&rdquo;,</li>
-<li>to fix the temperature if not showing correctly, edit the hwmon-path accordingly.</li>
-<li>use this function to easily identify the hwmon path
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in /sys/class/hwmon/hwmon*/temp*_input; <span style="color:#66d9ef">do</span> echo <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>&lt;<span style="color:#66d9ef">$(</span>dirname $i<span style="color:#66d9ef">)</span>/name<span style="color:#66d9ef">)</span><span style="color:#e6db74">: </span><span style="color:#66d9ef">$(</span>cat <span style="color:#e6db74">${</span>i%_*<span style="color:#e6db74">}</span>_label 2&gt;/dev/null <span style="color:#f92672">||</span> echo <span style="color:#66d9ef">$(</span>basename <span style="color:#e6db74">${</span>i%_*<span style="color:#e6db74">}</span><span style="color:#66d9ef">))</span><span style="color:#e6db74"> </span><span style="color:#66d9ef">$(</span>readlink -f $i<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">done</span>
-</span></span></code></pre></div></li>
-<li>look for <code>K10temp</code> for AMD CPU and <code>coretemp</code> for Intel CPU&rsquo;s</li>
-</ul>
-</li>
-<li>
-<p>For weather, edit the weather module located in  ~/.config/waybar/modules(change to your location)</p>
-</li>
-<li>
-<p>plenty waybar hyprland/workspaces to choose from. Circle, Roman Number, pacman, and workspace number and icons. Just assign accordingly on waybar configs. Check <code>~/.config/waybar/modules</code> for their modules names</p>
-</li>
-<li>
-<p>Regarding the waybar keyboard module, If you want to add in different waybar layout, the module name is custom/keyboard. Kindly NOTE that this will read your kb_layout in your Settings.conf. to change kb_layout, add in your Settings.conf &hellip;. i.e. kb_layout=us,es,ru and then refresh waybar (SUPER ALT R), then you can change keyboard by left clicking the keyboard module.</p>
-</li>
-<li>
-<p>unwanted waybar module:</p>
-<ul>
-<li>Simplest is to edit <code>~/.config/waybar/modules</code> . Put // before or delete that module.</li>
-<li>Or you dont really need to worry about since the modules not defined on waybar configs are not loaded.</li>
-</ul>
-</li>
 </ul>
 <h4 id="-hyprland-configurations">🎗️ Hyprland configurations</h4>
 <ul>
@@ -470,26 +373,9 @@ Rename your waybar configs and styles that you have costumized so it wont be ove
 <li>Do note that you need to enable or disable some items in ENVariables.conf file located in <code>~/.config/hypr/UserConfigs/ENVariables.conf</code></li>
 <li>a guide on wiki - <a href="https://wiki.hyprland.org/Nvidia/">https://wiki.hyprland.org/Nvidia/</a></li>
 </ul>
-<h4 id="-swaync">🔔 SwayNC</h4>
-<ul>
-<li>if you only want to use notification part of swayNC, edit ~/dotfiles/swaync/config.json</li>
-<li>look at the widgets part. you can disable by putting /* <!-- raw HTML omitted --> <em>/ i.e. /</em>&ldquo;buttons-grid&rdquo;,*/ or delete that line. Then you can refresh with <code>SUPER ALT R</code></li>
-</ul>
-<h4 id="-other-notes">🎗️ other notes</h4>
-<ul>
-<li><em>Multimedia keys</em> - may not work for every keyboard may need to hold down the function (<code>fn</code>) key</li>
-<li>Follow the wiki - <a href="https://wiki.hyprland.org/">https://wiki.hyprland.org/</a></li>
-<li>Follow the github - <a href="https://github.com/hyprwm/Hyprland">https://github.com/hyprwm/Hyprland</a></li>
-</ul>
-<h4 id="-hidden-features">🎗️ HIDDEN FEATURES!</h4>
-<ul>
-<li>ONLINE Music ( ALT M) (note: you may need to install yt-dlp or youtube-dl). You can edit the links of your choice. Script is located in <code>~/.config/hypr/scripts/Music_cmd.sh</code> .</li>
-<li>EMOTICONS (SUPER .) - useful for chats or messages ). Click to copy and CTRL V to paste</li>
-</ul>
 <h4 id="-reducing-cpu-usages--battery-saving">💡 Reducing cpu usages / Battery saving</h4>
 <ul>
 <li>Hyprland has a nice animation but it cost cpu and gpu usages including ram usages.</li>
-<li>On this dotfiles, you disable the borderangle animation in Hyprland settings under animations.</li>
 <li>You can also disable blur, reduce the shadow</li>
 <li>You can also refer to <a href="https://wiki.hyprland.org/hyprland-wiki/pages/FAQ/#how-do-i-make-hyprland-draw-as-little-power-as-possible-on-my-laptop"><code>Hyprland Wiki</code></a></li>
 </ul>

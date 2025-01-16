@@ -47,7 +47,7 @@
         },
         "datePublished": "2024-07-10",
         "description": "Short description",
-        "wordCount":  1816 ,
+        "wordCount":  930 ,
         "mainEntityOfPage": "True",
         "dateModified": "2024-07-10",
         "image": {
@@ -62,7 +62,7 @@
     </script>
 
 
-<meta name="generator" content="Hugo 0.128.2">
+<meta name="generator" content="Hugo 0.133.0">
 
     
 
@@ -177,60 +177,43 @@ stroke-linejoin="round" class="feather feather-home">
 <li>Click Preview</li>
 <li>Scroll to the bottom of the document, so all the pages are present</li>
 <li>Open Developer Tools on separate window and choose the Console tab</li>
-<li>Type allow pasting</li>
 <li>Then Paste the code from below and remove allow pasting from the console (and run the script)</li>
 </ol>
-<h3 id="use-one-script-only">Use one script only</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Create a script element to load the jsPDF library
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">jspdf</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;script&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Define the function to execute once the jsPDF library is loaded
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">jspdf</span>.<span style="color:#a6e22e">onload</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Create a new jsPDF instance
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pdf</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">jsPDF</span>();
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Get all image elements in the document
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;img&#34;</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Iterate through all image elements
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">elements</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">img</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">elements</span>[<span style="color:#a6e22e">i</span>];
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;add img &#34;</span>, <span style="color:#a6e22e">img</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Check if the image source is a blob URL
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#e6db74">/^blob:/</span>.<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">src</span>)) {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;invalid src&#34;</span>);
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>;  <span style="color:#75715e">// Skip the image if the source is not a blob URL
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Create a canvas element
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">can</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;canvas&#39;</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">con</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">can</span>.<span style="color:#a6e22e">getContext</span>(<span style="color:#e6db74">&#34;2d&#34;</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Set the canvas dimensions to match the image
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">can</span>.<span style="color:#a6e22e">width</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">width</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">can</span>.<span style="color:#a6e22e">height</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">height</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Draw the image onto the canvas
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">con</span>.<span style="color:#a6e22e">drawImage</span>(<span style="color:#a6e22e">img</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">width</span>, <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">height</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Convert the canvas content to a data URL (JPEG format)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">imgData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">can</span>.<span style="color:#a6e22e">toDataURL</span>(<span style="color:#e6db74">&#34;image/jpeg&#34;</span>, <span style="color:#ae81ff">1.0</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Add the image to the PDF
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">pdf</span>.<span style="color:#a6e22e">addImage</span>(<span style="color:#a6e22e">imgData</span>, <span style="color:#e6db74">&#39;JPEG&#39;</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Add a new page to the PDF for the next image
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">pdf</span>.<span style="color:#a6e22e">addPage</span>();
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Save the PDF file with the specified name
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">pdf</span>.<span style="color:#a6e22e">save</span>(<span style="color:#e6db74">&#34;Exported_File.pdf&#34;</span>);
+<h5 id="highly-recomended-to-use-script-1">Highly Recomended to use Script 1.</h5>
+<h6 id="script-1">Script 1:</h6>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">jspdf</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;script&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">jspdf</span>.<span style="color:#a6e22e">onload</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pdf</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">jsPDF</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;img&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">elements</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">img</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">elements</span>[<span style="color:#a6e22e">i</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;add img &#34;</span>, <span style="color:#a6e22e">img</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#e6db74">/^blob:/</span>.<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">src</span>)) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;invalid src&#34;</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">continue</span>; <span style="color:#75715e">// Skip the image if the source is not a blob URL
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">can</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;canvas&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">con</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">can</span>.<span style="color:#a6e22e">getContext</span>(<span style="color:#e6db74">&#34;2d&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">can</span>.<span style="color:#a6e22e">width</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">width</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">can</span>.<span style="color:#a6e22e">height</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">height</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">con</span>.<span style="color:#a6e22e">drawImage</span>(<span style="color:#a6e22e">img</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">width</span>, <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">height</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">imgData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">can</span>.<span style="color:#a6e22e">toDataURL</span>(<span style="color:#e6db74">&#34;image/jpeg&#34;</span>, <span style="color:#ae81ff">1.0</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pdf</span>.<span style="color:#a6e22e">addImage</span>(<span style="color:#a6e22e">imgData</span>, <span style="color:#e6db74">&#34;JPEG&#34;</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pdf</span>.<span style="color:#a6e22e">addPage</span>();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Save the PDF file with the specified name
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">pdf</span>.<span style="color:#a6e22e">save</span>(<span style="color:#e6db74">&#34;Exported_File.pdf&#34;</span>);
 </span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Set the source of the script element to the jsPDF library URL
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">jspdf</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js&#39;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Append the script element to the document body to load the jsPDF library
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">jspdf</span>);
-</span></span></code></pre></div><h4 id="or">OR</h4>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">jspdf</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js&#34;</span>;
+</span></span><span style="display:flex;"><span>document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">jspdf</span>);
+</span></span></code></pre></div><h6 id="script-2">Script 2:</h6>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>(<span style="color:#66d9ef">function</span> () {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Loading script ...&#34;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">script</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;script&#34;</span>);
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">onload</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">jsPDF</span> } <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">jspdf</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Generate a PDF from images with &#34;blob:&#34; sources.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pdf</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pdf</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">imgElements</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;img&#34;</span>);
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">validImgs</span> <span style="color:#f92672">=</span> [];
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">initPDF</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
@@ -238,7 +221,6 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Scanning content ...&#34;</span>);
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">imgElements</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">img</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">imgElements</span>[<span style="color:#a6e22e">i</span>];
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">checkURLString</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;blob:https://drive.google.com/&#34;</span>;
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">src</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">checkURLString</span>.<span style="color:#a6e22e">length</span>) <span style="color:#f92672">!==</span> <span style="color:#a6e22e">checkURLString</span>) {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">continue</span>;
@@ -250,7 +232,6 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">validImgs</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">img</span>);
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">validImgs</span>.<span style="color:#a6e22e">length</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> content found!`</span>);
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Generating PDF file ...&#34;</span>);
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">validImgs</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
@@ -264,15 +245,10 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">orientation</span>;
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalWidth</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalHeight</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//console.log(&#34;Landscape&#34;);
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">orientation</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;l&#34;</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//ratio = img.naturalWidth/img.naturalHeight
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      } <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//console.log(&#34;Portrait&#34;);
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">orientation</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;p&#34;</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//ratio = img.naturalWidth/img.naturalHeight
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      }
-</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">orientation</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;l&#34;</span>;
+</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">orientation</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;p&#34;</span>;
+</span></span><span style="display:flex;"><span>      }
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pageWidth</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalWidth</span>;
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pageHeight</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalHeight</span>;
 </span></span><span style="display:flex;"><span>
@@ -284,34 +260,26 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span style="display:flex;"><span>        });
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">initPDF</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
 </span></span><span style="display:flex;"><span>      }
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">initPDF</span>) {
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">pdf</span>.<span style="color:#a6e22e">addImage</span>(<span style="color:#a6e22e">imgData</span>, <span style="color:#e6db74">&#34;PNG&#34;</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">pageWidth</span>, <span style="color:#a6e22e">pageHeight</span>, <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#e6db74">&#34;SLOW&#34;</span>);
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">validImgs</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) {
 </span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">pdf</span>.<span style="color:#a6e22e">addPage</span>();
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>      }
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">percentages</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(((<span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">/</span> <span style="color:#a6e22e">validImgs</span>.<span style="color:#a6e22e">length</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>);
 </span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Processing content </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">percentages</span><span style="color:#e6db74">}</span><span style="color:#e6db74">%`</span>);
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// check if title contains .pdf in end of the title
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;meta[itemprop=&#34;name&#34;]&#39;</span>).<span style="color:#a6e22e">content</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;meta[itemprop=&#34;name&#34;]&#39;</span>).<span style="color:#a6e22e">content</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">title</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;.&#34;</span>).<span style="color:#a6e22e">pop</span>() <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#34;pdf&#34;</span>) {
 </span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.pdf&#34;</span>;
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Download the generated PDF.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Downloading PDF file ...&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Downloading PDF file ...&#34;</span>);
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pdf</span>.<span style="color:#a6e22e">save</span>(<span style="color:#a6e22e">title</span>, { <span style="color:#a6e22e">returnPromise</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> }).<span style="color:#a6e22e">then</span>(() =&gt; {
 </span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">removeChild</span>(<span style="color:#a6e22e">script</span>);
 </span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;PDF downloaded!&#34;</span>);
 </span></span><span style="display:flex;"><span>    });
 </span></span><span style="display:flex;"><span>  };
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Load the jsPDF library using the trusted URL.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">scriptURL</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">scriptURL</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js&#34;</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">trustedURL</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (window.<span style="color:#a6e22e">trustedTypes</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">trustedTypes</span>.<span style="color:#a6e22e">createPolicy</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">policy</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">trustedTypes</span>.<span style="color:#a6e22e">createPolicy</span>(<span style="color:#e6db74">&#34;myPolicy&#34;</span>, {
@@ -323,69 +291,39 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">trustedURL</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">scriptURL</span>;
 </span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">trustedURL</span>;
 </span></span><span style="display:flex;"><span>  document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">script</span>);
 </span></span><span style="display:flex;"><span>})();
-</span></span></code></pre></div><h4 id="or-1">OR</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// Define the base name for the PDF document.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pdfDocumentName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Document&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Initialize a variable to hold the concatenated data URLs of images.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">docDataUrls</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Extracts and encodes images from the current page into a downloadable file.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span></code></pre></div><h6 id="script-3">Script 3:</h6>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pdfDocumentName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Document&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">docDataUrls</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">generatePDFDataFile</span>() {
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Fetch all image elements on the page.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">imgTags</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;img&#34;</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Define the prefix for URLs to be considered (specific to Google Drive hosted images).
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">checkURLString</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;blob:https://drive.google.com/&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Iterate over all image tags to check and process valid images.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">imgTags</span>).<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">img</span> =&gt; {
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Check if the image&#39;s source URL matches the defined prefix.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">src</span>.<span style="color:#a6e22e">startsWith</span>(<span style="color:#a6e22e">checkURLString</span>)) {
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Prepare a canvas to draw the image for data URL conversion.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">canvas</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;canvas&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">imgTags</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;img&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">checkURLString</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;blob:https://drive.google.com/&#34;</span>;
+</span></span><span style="display:flex;"><span>  Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">imgTags</span>).<span style="color:#a6e22e">forEach</span>((<span style="color:#a6e22e">img</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">src</span>.<span style="color:#a6e22e">startsWith</span>(<span style="color:#a6e22e">checkURLString</span>)) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">canvas</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;canvas&#34;</span>);
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">context</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">getContext</span>(<span style="color:#e6db74">&#34;2d&#34;</span>);
 </span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">width</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalWidth</span>;
 </span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">height</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalHeight</span>;
 </span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">drawImage</span>(<span style="color:#a6e22e">img</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalWidth</span>, <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalHeight</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Convert the canvas content to a data URL.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">imgDataURL</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">toDataURL</span>();
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Append the new data URL to the document data, separated by newlines for multiple images.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#a6e22e">docDataUrls</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">docDataUrls</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;\n&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#e6db74">}${</span><span style="color:#a6e22e">imgDataURL</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">imgDataURL</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">toDataURL</span>();
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">docDataUrls</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">docDataUrls</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;\n&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#e6db74">}${</span><span style="color:#a6e22e">imgDataURL</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>  });
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Create a Blob from the concatenated image data URLs.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">file</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Blob</span>([<span style="color:#a6e22e">docDataUrls</span>], {<span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;text/plain&#39;</span>});
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Generate a URL for the Blob.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">URL</span>.<span style="color:#a6e22e">createObjectURL</span>(<span style="color:#a6e22e">file</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Create an anchor element for downloading the file.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">anchorElement</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;a&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">file</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Blob</span>([<span style="color:#a6e22e">docDataUrls</span>], { <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;text/plain&#34;</span> });
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">URL</span>.<span style="color:#a6e22e">createObjectURL</span>(<span style="color:#a6e22e">file</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">anchorElement</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;a&#34;</span>);
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">anchorElement</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">url</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">anchorElement</span>.<span style="color:#a6e22e">download</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">pdfDocumentName</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.PDF_DataFile`</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Trigger the download.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">anchorElement</span>);
+</span></span><span style="display:flex;"><span>  document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">anchorElement</span>);
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">anchorElement</span>.<span style="color:#a6e22e">click</span>();
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Identifies the tallest scrollable element and scrolls through it before generating the PDF data file.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">autoScrollAndGeneratePDF</span>() {
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Find all elements on the page.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">allElements</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#34;*&#34;</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Initialize variables to track the tallest scrollable element and its height.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">chosenElement</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">allElements</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#34;*&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">chosenElement</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">heightOfScrollableElement</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Iterate over all elements to find the tallest scrollable one.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">allElements</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">element</span> =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">allElements</span>.<span style="color:#a6e22e">forEach</span>((<span style="color:#a6e22e">element</span>) =&gt; {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">clientHeight</span>) {
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">heightOfScrollableElement</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">scrollHeight</span>) {
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">chosenElement</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">element</span>;
@@ -393,166 +331,110 @@ stroke-linejoin="round" class="feather feather-home">
 </span></span><span style="display:flex;"><span>      }
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>  });
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Check if a scrollable element was found and needs to be scrolled.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">chosenElement</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">chosenElement</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">chosenElement</span>.<span style="color:#a6e22e">clientHeight</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">chosenElement</span> <span style="color:#f92672">&amp;&amp;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">chosenElement</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">chosenElement</span>.<span style="color:#a6e22e">clientHeight</span>
+</span></span><span style="display:flex;"><span>  ) {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Auto Scroll&#34;</span>);
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">scrollDistance</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">chosenElement</span>.<span style="color:#a6e22e">clientHeight</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>);
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">remainingHeightToScroll</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">chosenElement</span>.<span style="color:#a6e22e">scrollHeight</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">scrollToLocation</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/**
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * Recursively scrolls the chosen element until fully scrolled.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * @param {number} remainingHeight - Remaining height to scroll.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     * @param {number} scrollTo - Current scroll target within the element.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     */</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">myLoop</span>(<span style="color:#a6e22e">remainingHeight</span>, <span style="color:#a6e22e">scrollTo</span>) {
 </span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">setTimeout</span>(() =&gt; {
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">scrollTo</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">scrollDistance</span>;
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">chosenElement</span>.<span style="color:#a6e22e">scrollTo</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">scrollTo</span>);
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">remainingHeight</span> <span style="color:#f92672">-=</span> <span style="color:#a6e22e">scrollDistance</span>;
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">remainingHeight</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
 </span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">myLoop</span>(<span style="color:#a6e22e">remainingHeight</span>, <span style="color:#a6e22e">scrollTo</span>);
 </span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>          <span style="color:#75715e">// After the final scroll, wait a moment before generating the PDF data file.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>          <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">generatePDFDataFile</span>, <span style="color:#ae81ff">1500</span>);
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">generatePDFDataFile</span>, <span style="color:#ae81ff">1500</span>);
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>      }, <span style="color:#ae81ff">400</span>);
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Start the scrolling process.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">myLoop</span>(<span style="color:#a6e22e">remainingHeightToScroll</span>, <span style="color:#a6e22e">scrollToLocation</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">myLoop</span>(<span style="color:#a6e22e">remainingHeightToScroll</span>, <span style="color:#a6e22e">scrollToLocation</span>);
 </span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;No Scroll Needed&#34;</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// If no scrolling is needed, wait a moment before generating the PDF data file.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">generatePDFDataFile</span>, <span style="color:#ae81ff">1500</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">generatePDFDataFile</span>, <span style="color:#ae81ff">1500</span>);
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Start the process.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">autoScrollAndGeneratePDF</span>();
-</span></span></code></pre></div><h4 id="or-2">OR</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// Function to dynamically load the jsPDF library and execute a callback function once it&#39;s loaded
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">loadJsPDF</span>(<span style="color:#a6e22e">callback</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Create a new script element
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">script</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;script&#34;</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Assign a callback function to be called once the script is fully loaded
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">onload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">callback</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Set the source URL of the script to the jsPDF library
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js&#39;</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Append the script element to the body of the document, triggering the download and execution of the jsPDF script
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">script</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">autoScrollAndGeneratePDF</span>();
+</span></span></code></pre></div><h6 id="script-4">Script 4:</h6>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">loadJsPDF</span>(<span style="color:#a6e22e">callback</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">script</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;script&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">onload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">callback</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js&#34;</span>;
+</span></span><span style="display:flex;"><span>  document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">script</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Main function to process the page content and generate a PDF
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">processAndGeneratePDF</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Initialize the document name with the desired output filename
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pdfDocumentName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Document.pdf&#34;</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// This variable will hold our jsPDF instance once it&#39;s created
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">doc</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Function to add an individual image to the PDF document
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">addImageToPDF</span>(<span style="color:#a6e22e">img</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Create a canvas element to draw the image on
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">canvas</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;canvas&#39;</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ctx</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">getContext</span>(<span style="color:#e6db74">&#34;2d&#34;</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Set the canvas dimensions to match the image dimensions
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">width</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalWidth</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">height</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalHeight</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Draw the image onto the canvas
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">drawImage</span>(<span style="color:#a6e22e">img</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Convert the canvas content to a data URL that jsPDF can use
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">imgData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">toDataURL</span>();
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Determine the orientation of the image for the PDF layout
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">orientation</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalWidth</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalHeight</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;l&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;p&#34;</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Set a scale factor to adjust the image size in the PDF
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">scaleFactor</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.335</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Calculate the page dimensions based on the image size and scale factor
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pageWidth</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalWidth</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">scaleFactor</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pageHeight</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalHeight</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">scaleFactor</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Check if the jsPDF instance exists, create it if not, or add a new page to it if it does
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">doc</span>) {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">doc</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">jsPDF</span>({
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">orientation</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">unit</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;px&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">format</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">pageWidth</span>, <span style="color:#a6e22e">pageHeight</span>],
-</span></span><span style="display:flex;"><span>            });
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">processAndGeneratePDF</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pdfDocumentName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Document.pdf&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">doc</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">addImageToPDF</span>(<span style="color:#a6e22e">img</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">canvas</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;canvas&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ctx</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">getContext</span>(<span style="color:#e6db74">&#34;2d&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">width</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalWidth</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">height</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalHeight</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">drawImage</span>(<span style="color:#a6e22e">img</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">imgData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">toDataURL</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">orientation</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalWidth</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalHeight</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;l&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;p&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">scaleFactor</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.335</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pageWidth</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalWidth</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">scaleFactor</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pageHeight</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalHeight</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">scaleFactor</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">doc</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">doc</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">jsPDF</span>({
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">orientation</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">unit</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;px&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">format</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">pageWidth</span>, <span style="color:#a6e22e">pageHeight</span>],
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">doc</span>.<span style="color:#a6e22e">addPage</span>([<span style="color:#a6e22e">pageWidth</span>, <span style="color:#a6e22e">pageHeight</span>], <span style="color:#a6e22e">orientation</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">doc</span>.<span style="color:#a6e22e">addImage</span>(<span style="color:#a6e22e">imgData</span>, <span style="color:#e6db74">&#34;PNG&#34;</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalWidth</span>, <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalHeight</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">processValidImages</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">imgTags</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;img&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">checkURLString</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;blob:https://drive.google.com/&#34;</span>;
+</span></span><span style="display:flex;"><span>    Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">imgTags</span>).<span style="color:#a6e22e">forEach</span>((<span style="color:#a6e22e">img</span>) =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">src</span>.<span style="color:#a6e22e">startsWith</span>(<span style="color:#a6e22e">checkURLString</span>)) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">addImageToPDF</span>(<span style="color:#a6e22e">img</span>);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">doc</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">doc</span>.<span style="color:#a6e22e">save</span>(<span style="color:#a6e22e">pdfDocumentName</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleAutoScrollAndGeneratePDF</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">elementsWithScroll</span> <span style="color:#f92672">=</span> Array.<span style="color:#a6e22e">from</span>(
+</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#34;*&#34;</span>),
+</span></span><span style="display:flex;"><span>    ).<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">el</span>) =&gt; <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">clientHeight</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">chosenElement</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">elementsWithScroll</span>.<span style="color:#a6e22e">reduce</span>(
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">maxEl</span>, <span style="color:#a6e22e">currentEl</span>) =&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">currentEl</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">&gt;</span> (<span style="color:#a6e22e">maxEl</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">?</span> <span style="color:#a6e22e">currentEl</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">maxEl</span>,
+</span></span><span style="display:flex;"><span>      {},
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">chosenElement</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">chosenElement</span>.<span style="color:#a6e22e">clientHeight</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Auto Scroll&#34;</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">remainingHeight</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">chosenElement</span>.<span style="color:#a6e22e">scrollHeight</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">scrollDistance</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">chosenElement</span>.<span style="color:#a6e22e">clientHeight</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">scrollAndGenerate</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">remainingHeight</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">chosenElement</span>.<span style="color:#a6e22e">scrollBy</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">scrollDistance</span>);
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">remainingHeight</span> <span style="color:#f92672">-=</span> <span style="color:#a6e22e">scrollDistance</span>;
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">scrollAndGenerate</span>, <span style="color:#ae81ff">500</span>);
 </span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">doc</span>.<span style="color:#a6e22e">addPage</span>([<span style="color:#a6e22e">pageWidth</span>, <span style="color:#a6e22e">pageHeight</span>], <span style="color:#a6e22e">orientation</span>);
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">processValidImages</span>, <span style="color:#ae81ff">1500</span>);
 </span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Add the image to the PDF document
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">doc</span>.<span style="color:#a6e22e">addImage</span>(<span style="color:#a6e22e">imgData</span>, <span style="color:#e6db74">&#34;PNG&#34;</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalWidth</span>, <span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">naturalHeight</span>);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">scrollAndGenerate</span>();
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;No Scroll&#34;</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">processValidImages</span>, <span style="color:#ae81ff">1500</span>);
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Function to identify valid images and process them for inclusion in the PDF
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">processValidImages</span>() {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Retrieve all image elements from the document
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">imgTags</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;img&#34;</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Define the URL pattern to filter images that should be included in the PDF
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">checkURLString</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;blob:https://drive.google.com/&#34;</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Iterate over each image and add it to the PDF if it matches the pattern
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">imgTags</span>).<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">img</span> =&gt; {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">src</span>.<span style="color:#a6e22e">startsWith</span>(<span style="color:#a6e22e">checkURLString</span>)) {
-</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">addImageToPDF</span>(<span style="color:#a6e22e">img</span>);
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        });
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Once all valid images are processed, save the PDF document
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">doc</span>) {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">doc</span>.<span style="color:#a6e22e">save</span>(<span style="color:#a6e22e">pdfDocumentName</span>);
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Function to handle scrolling for elements with significant scrollable content before generating the PDF
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleAutoScrollAndGeneratePDF</span>() {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Identify all elements that have scrollable content
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">elementsWithScroll</span> <span style="color:#f92672">=</span> Array.<span style="color:#a6e22e">from</span>(document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#34;*&#34;</span>)).<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">el</span> =&gt; <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">clientHeight</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Select the element with the maximum scroll height to focus on
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">chosenElement</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">elementsWithScroll</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">maxEl</span>, <span style="color:#a6e22e">currentEl</span>) =&gt; <span style="color:#a6e22e">currentEl</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">&gt;</span> (<span style="color:#a6e22e">maxEl</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">?</span> <span style="color:#a6e22e">currentEl</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">maxEl</span>, {});
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Check if the chosen element requires scrolling
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">chosenElement</span>.<span style="color:#a6e22e">scrollHeight</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">chosenElement</span>.<span style="color:#a6e22e">clientHeight</span>) {
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Auto Scroll&#34;</span>);
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Initialize the remaining height to scroll through
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">remainingHeight</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">chosenElement</span>.<span style="color:#a6e22e">scrollHeight</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Calculate the distance to scroll each iteration, based on half the client height of the element
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">scrollDistance</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">chosenElement</span>.<span style="color:#a6e22e">clientHeight</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Recursive function to scroll through the element and generate the PDF afterwards
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">scrollAndGenerate</span>() {
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">remainingHeight</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
-</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">// Scroll the element by the calculated distance
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#a6e22e">chosenElement</span>.<span style="color:#a6e22e">scrollBy</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">scrollDistance</span>);
-</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">// Subtract the scrolled distance from the remaining height
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#a6e22e">remainingHeight</span> <span style="color:#f92672">-=</span> <span style="color:#a6e22e">scrollDistance</span>;
-</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">// Continue scrolling after a brief delay
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">scrollAndGenerate</span>, <span style="color:#ae81ff">500</span>);
-</span></span><span style="display:flex;"><span>                } <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">// Once scrolling is complete, wait briefly before generating the PDF
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">processValidImages</span>, <span style="color:#ae81ff">1500</span>);
-</span></span><span style="display:flex;"><span>                }
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Start the scrolling process
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">scrollAndGenerate</span>();
-</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// If no scrolling is needed, wait briefly before generating the PDF directly
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;No Scroll&#34;</span>);
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">processValidImages</span>, <span style="color:#ae81ff">1500</span>);
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Initiate the process of handling scrollable content and generating the PDF
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">handleAutoScrollAndGeneratePDF</span>();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">handleAutoScrollAndGeneratePDF</span>();
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Start the entire process by loading the jsPDF library and then executing the main function once it&#39;s loaded
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">loadJsPDF</span>(<span style="color:#a6e22e">processAndGeneratePDF</span>);
-</span></span></code></pre></div><ol start="7">
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">loadJsPDF</span>(<span style="color:#a6e22e">processAndGeneratePDF</span>);
+</span></span></code></pre></div><ol start="6">
 <li>Wait script processing and downloading pdf file</li>
 <li>Fast or slow pdf processing based on the pdf content itself.</li>
 <li>Enjoy&hellip;</li>
