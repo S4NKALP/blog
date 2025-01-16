@@ -22,7 +22,7 @@ Note 2: If you’re getting only part of the document visible, try zooming out y
 4. Open Developer Tools on separate window and choose the Console tab
 5. Then Paste the code from below and remove allow pasting from the console (and run the script)
 
-##### Highly Recomended to use Script 1.
+##### Highly Recommended to use Script 1.
 
 ###### Script 1:
 
