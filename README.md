@@ -2,7 +2,7 @@
 
 S4NKALP BLOGS is a personal website built with [Hugo](https://gohugo.io/) that uses the [hugo-blog-awesome](https://github.com/hugo-sid/hugo-blog-awesome/) theme.
 
-The website is hosted on [GitHub Pages](https://pages.github.com/).
+The website is hosted on [GitHub Pages](https://pages.github.com/) and is accessible via the custom domain [S4NKALP BLOGS](https://S4NKALP.github.io/blog/).
 
 
 ## Motivation
